@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cognita Mindcare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ─── Design Tokens ──────────────────────────────── */
+    :root {
+      --teal:       #2D6E61;
+      --teal-dark:  #1E4D44;
+      --teal-light: #4A8C7F;
+      --cream:      #F4F2EE;
+      --blue-gray:  #D8E4E8;
+      --gray-bg:    #E6E4DF;
+      --card-bg:    #FFFFFF;
+      --text:       #1A1A1A;
+      --muted:      #6B6B6B;
+      --border:     #C8C0B4;
+      --radius:     14px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ─── Nav ────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 200;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2.25rem;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all .3s;
+    }
+
+    /* ─── Hero ───────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: var(--cream);
+      padding: 7rem 3rem 5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+      font-weight: 700;
+      line-height: 1.08;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 .accent { color: var(--teal); }
+
+    .hero-desc {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 400px;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.9rem;
+    }
+
+    /* ─── Buttons ────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 9px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all .22s ease;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+    .btn-primary:hover {
+      background: var(--teal-light);
+      border-color: var(--teal-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(45,110,97,.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    /* ─── Hero Image ─────────────────────────────────── */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo {
+      width: 340px;
+      height: 440px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-photo img,
+    .hero-photo .img-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .img-placeholder {
+      background: linear-gradient(145deg, #C6CFC8 0%, #A8B8AC 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.55);
+      font-size: 0.8rem;
+      letter-spacing: .05em;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: -10px;
+      left: -18px;
+      background: #fff;
+      padding: 0.65rem 1.1rem;
+      border-radius: 9px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+      white-space: nowrap;
+    }
+
+    /* ─── Section Shared ─────────────────────────────── */
+    .section-wrap {
+      padding: 6rem 3rem;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.25rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    /* ─── Services ───────────────────────────────────── */
+    .services { background: var(--blue-gray); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.09);
+    }
+
+    .card-icon {
+      font-size: 1.7rem;
+      margin-bottom: 1.2rem;
+      color: var(--teal);
+      line-height: 1;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--teal-dark);
+      margin-bottom: 0.65rem;
+      line-height: 1.25;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--teal);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: gap .2s;
+    }
+    .card-link:hover { gap: 0.65rem; }
+
+    /* ─── Corporate CTA ──────────────────────────────── */
+    .corporate { background: var(--cream); }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .split-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 420px;
+    }
+
+    .split-image img,
+    .split-image .img-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .split-image .img-placeholder {
+      background: linear-gradient(145deg, #B8C8C2 0%, #9AB0A8 100%);
+    }
+
+    .split-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    .split-content p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      font-size: 0.97rem;
+    }
+
+    /* ─── Testimonials ───────────────────────────────── */
+    .testimonials { background: var(--gray-bg); }
+
+    .testimonials .section-header h2 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+    }
+
+    .stars {
+      color: var(--teal);
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card blockquote {
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.93rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .author-name {
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .author-role {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* ─── Footer ─────────────────────────────────────── */
+    footer {
+      background: var(--teal-dark);
+      color: rgba(255,255,255,.75);
+      padding: 4rem 3rem 2rem;
+    }
+
+    .footer-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.4fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      margin-bottom: 1.75rem;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--teal-light);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .footer-desc { font-size: 0.88rem; line-height: 1.65; }
+
+    .footer-col h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,.65);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: #fff; }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .contact-item .icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+
+    .footer-bottom {
+      max-width: 1160px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,.35);
+    }
+
+    /* ─── Responsive ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: #fff;
+        padding: 1.5rem;
+        gap: 1.25rem;
+        box-shadow: 0 8px 24px rgba(0,0,0,.08);
+      }
+      .nav-hamburger { display: flex; }
+
+      .hero { padding: 5.5rem 1.5rem 3rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero-visual { order: -1; display: flex; justify-content: center; }
+      .hero-photo { width: 180px; height: 200px; }
+      .hero-badge { bottom: -8px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; padding: 0.5rem 0.9rem; }
+      .hero h1 { font-size: clamp(2.4rem, 8vw, 3.2rem); }
+      .hero-desc { font-size: 0.9rem; }
+
+      .section-wrap { padding: 4rem 1.5rem; }
+
+      .cards-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+      .split { grid-template-columns: 1fr; gap: 2rem; }
+      .split-image { height: 280px; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; padding: 0 0 2rem; }
+      footer { padding: 3rem 1.5rem 1.5rem; }
+    }
+
+    @media (min-width: 600px) and (max-width: 900px) {
+      .cards-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Navigation ─────────────────────────────────── -->
+  <nav id="navbar">
+    <a href="#" class="logo">Cognita Mindcare</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#workshops">Workshops</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── Hero ───────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Lifestyle Coach &amp; Corporate Psychologist</p>
+        <h1>
+          Transform<br>
+          Your<br>
+          Life<br>
+          &amp;<br>
+          <span class="accent">Organization</span>
+        </h1>
+        <p class="hero-desc">
+          Evidence-based coaching and psychology services designed to unlock your
+          potential — personally and professionally.
+        </p>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary">Explore Services &rarr;</a>
+          <a href="#contact"  class="btn btn-outline">Book a Consultation</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-photo">
+          <!--
+            Replace the div below with:
+            <img src="your-photo.jpg" alt="Cognita Mindcare — Lifestyle Coach & Corporate Psychologist" />
+          -->
+          <div class="img-placeholder">[ Your Photo Here ]</div>
+        </div>
+        <div class="hero-badge">15+ Years Experience</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Services ───────────────────────────────────── -->
+  <section class="section-wrap services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>How I Can Help</h2>
+        <p>Comprehensive services tailored to individual growth and organizational excellence.</p>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card">
+          <div class="card-icon">&#9825;</div>
+          <h3>Individual<br>Services</h3>
+          <p>Personal coaching, stress management, and life transitions support to help you thrive.</p>
+          <a href="#" class="card-link">Learn more &rarr;</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">&#129504;</div>
+          <h3>Corporate<br>Psychology</h3>
+          <p>Organizational assessments, leadership development, and workplace well-being programs.</p>
+          <a href="#" class="card-link">Learn more &rarr;</a>
+        </div>
+
+        <div class="card" id="workshops">
+          <div class="card-icon">&#128101;</div>
+          <h3>Workshops &amp;<br>Training</h3>
+          <p>Interactive workshops for teams on resilience, communication, and emotional intelligence.</p>
+          <a href="#" class="card-link">Learn more &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Corporate CTA ──────────────────────────────── -->
+  <section class="section-wrap corporate" id="about">
+    <div class="container">
+      <div class="split">
+
+        <div class="split-image">
+          <!--
+            Replace the div below with:
+            <img src="team-workshop.jpg" alt="Team workshop in session" />
+          -->
+          <div class="img-placeholder">[ Team Photo Here ]</div>
+        </div>
+
+        <div class="split-content">
+          <h2>Bring Growth to Your Organization</h2>
+          <p>
+            From executive coaching to team workshops, I partner with forward-thinking
+            companies to build psychologically healthy workplaces where people and
+            performance thrive.
+          </p>
+          <a href="#contact" class="btn btn-primary">Schedule a Call &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Testimonials ───────────────────────────────── -->
+  <section class="section-wrap testimonials" id="blog">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Clients Say</h2>
+      </div>
+      <div class="cards-grid">
+
+        <div class="testimonial-card">
+          <div class="stars">✦✦✦✦✦</div>
+          <blockquote>
+            "Veronica's coaching transformed how I approach both my career and personal
+            relationships. Truly life-changing."
+          </blockquote>
+          <div>
+            <span class="author-name">Sarah M.</span>
+            <span class="author-role">Marketing Director</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">✦✦✦✦✦</div>
+          <blockquote>
+            "The corporate workshops she delivered for our team were incredibly impactful.
+            Engagement scores jumped 30%."
+          </blockquote>
+          <div>
+            <span class="author-name">James K.</span>
+            <span class="author-role">VP of HR, TechCorp</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">✦✦✦✦✦</div>
+          <blockquote>
+            "A rare blend of warmth and professional rigor. I recommend Veronica to anyone
+            serious about growth."
+          </blockquote>
+          <div>
+            <span class="author-name">Priya L.</span>
+            <span class="author-role">Entrepreneur</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────── -->
+  <footer id="contact">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-logo">Cognita Mindcare</div>
+        <p class="footer-desc">
+          Empowering individuals and organizations through evidence-based psychology
+          and transformative coaching.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#workshops">Workshops</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <div class="contact-item">
+          <span class="icon">✉</span>
+          <span>hello@veronicasconsulting.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">&#9742;</span>
+          <span>+1 (555) 123-4567</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">&#9711;</span>
+          <span>New York, NY</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Cognita Mindcare. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ─── JS ─────────────────────────────────────────── -->
+  <script>
+    // Mobile hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Subtle nav shadow on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.style.boxShadow = window.scrollY > 10
+        ? '0 2px 16px rgba(0,0,0,0.08)'
+        : '0 1px 0 rgba(0,0,0,0.06)';
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card, .testimonial-card, .split-content, .split-image, .hero-content, .hero-visual').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity .55s ease, transform .55s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
