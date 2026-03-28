@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internship Programme — Cognita Mindcare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --teal:       #3AABA0;
+      --teal-dark:  #2A7A76;
+      --teal-light: #7BCBC5;
+      --rose:       #C4A8B0;
+      --cream:      #F5F4F4;
+      --blue-gray:  #EEF0EF;
+      --gray-bg:    #EDEAE8;
+      --card-bg:    #FFFFFF;
+      --text:       #3A3A3A;
+      --muted:      #7A7A7A;
+      --border:     #D4CCC8;
+      --radius:     14px;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+    /* ─── Nav ─────────────────────────────────────────── */
+    nav { position: fixed; inset: 0 0 auto 0; z-index: 200; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 3rem; box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-links { list-style: none; display: flex; gap: 2.25rem; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all .3s; }
+
+    /* ─── Buttons ─────────────────────────────────────── */
+    .btn { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.85rem 1.75rem; border-radius: 9px; font-size: 0.9rem; font-weight: 500; text-decoration: none; transition: all .22s ease; cursor: pointer; border: 1.5px solid transparent; }
+    .btn-primary { background: var(--teal); color: #fff; border-color: var(--teal); }
+    .btn-primary:hover { background: var(--teal-light); border-color: var(--teal-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(58,171,160,.3); }
+    .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* ─── Hero ────────────────────────────────────────── */
+    .page-hero { padding: 9rem 3rem 5rem; background: var(--cream); text-align: center; }
+    .page-hero-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 1.2rem; }
+    .page-hero h1 .accent { color: var(--teal); }
+    .page-hero p { font-size: 1rem; color: var(--muted); max-width: 620px; margin: 0 auto 2rem; line-height: 1.75; }
+
+    /* ─── Stats Strip ─────────────────────────────────── */
+    .stats-strip { background: var(--teal-dark); padding: 2.5rem 3rem; }
+    .stats-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+    .stat-item .stat-value { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #fff; display: block; margin-bottom: 0.3rem; }
+    .stat-item .stat-label { font-size: 0.82rem; color: rgba(255,255,255,.65); letter-spacing: 0.05em; }
+
+    /* ─── Shared Layout ───────────────────────────────── */
+    .section-wrap { padding: 6rem 3rem; }
+    .container { max-width: 1160px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3.25rem; }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.6rem); font-weight: 700; margin-bottom: 0.8rem; }
+    .section-header p { color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.65; font-size: 0.95rem; }
+    .bg-blue { background: var(--blue-gray); }
+    .bg-gray { background: var(--gray-bg); }
+    .bg-cream { background: var(--cream); }
+
+    /* ─── Cards ───────────────────────────────────────── */
+    .cards-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .cards-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .card { background: var(--card-bg); border-radius: var(--radius); padding: 2rem 1.75rem; transition: transform .28s ease, box-shadow .28s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+    .card-icon { font-size: 1.7rem; margin-bottom: 1.2rem; color: var(--teal); }
+    .card h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 0.65rem; line-height: 1.25; }
+    .card .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); background: rgba(196,168,176,.12); padding: 0.3rem 0.75rem; border-radius: 20px; margin-bottom: 0.85rem; }
+    .card ul { list-style: none; padding: 0; }
+    .card ul li { font-size: 0.88rem; color: var(--muted); line-height: 1.65; padding: 0.4rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 0.6rem; }
+    .card ul li:last-child { border-bottom: none; }
+    .card ul li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* ─── Learn Grid ──────────────────────────────────── */
+    .learn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .learn-item { background: var(--card-bg); border-radius: var(--radius); padding: 1.5rem; border-left: 3px solid var(--teal); }
+    .learn-item h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+    .learn-item p { font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+
+    /* ─── How It Works ────────────────────────────────── */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; }
+    .steps::before { content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, var(--teal-light), var(--teal)); z-index: 0; }
+    .step { text-align: center; position: relative; z-index: 1; }
+    .step-num { width: 56px; height: 56px; border-radius: 50%; background: var(--teal); color: #fff; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 4px 16px rgba(58,171,160,.35); }
+    .step h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+    .step p { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
+
+    /* ─── Apply CTA ───────────────────────────────────── */
+    .apply-cta { background: var(--teal-dark); padding: 6rem 3rem; text-align: center; }
+    .apply-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.8rem); color: #fff; margin-bottom: 1rem; }
+    .apply-cta p { color: rgba(255,255,255,.7); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.7; font-size: 0.97rem; }
+    .apply-cta .btn-primary { background: #fff; color: var(--teal-dark); border-color: #fff; }
+    .apply-cta .btn-primary:hover { background: var(--teal-light); color: #fff; border-color: var(--teal-light); }
+    .apply-cta .btn-outline { border-color: rgba(255,255,255,.5); color: #fff; margin-left: 1rem; }
+    .apply-cta .btn-outline:hover { border-color: #fff; }
+
+    /* ─── Apply Form ──────────────────────────────────── */
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.4rem; color: var(--text); }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--border); border-radius: 9px; font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text); background: #fff; transition: border-color .2s; outline: none; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--teal); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+    /* ─── Footer ──────────────────────────────────────── */
+    footer { background: var(--teal-dark); color: rgba(255,255,255,.75); padding: 4rem 3rem 2rem; }
+    .footer-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1.4fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.1); margin-bottom: 1.75rem; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--teal-light); line-height: 1.3; margin-bottom: 1rem; }
+    .footer-desc { font-size: 0.88rem; line-height: 1.65; }
+    .footer-col h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a { color: rgba(255,255,255,.65); text-decoration: none; font-size: 0.88rem; transition: color .2s; }
+    .footer-col ul li a:hover { color: #fff; }
+    .contact-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 0.75rem; }
+    .footer-bottom { max-width: 1160px; margin: 0 auto; text-align: center; font-size: 0.82rem; color: rgba(255,255,255,.35); }
+
+    /* ─── Responsive ──────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 1.5rem; gap: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+      .nav-hamburger { display: flex; }
+      .page-hero { padding: 7rem 1.5rem 4rem; }
+      .section-wrap { padding: 4rem 1.5rem; }
+      .stats-strip { padding: 2rem 1.5rem; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .cards-grid-2 { grid-template-columns: 1fr; }
+      .cards-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .learn-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .steps::before { display: none; }
+      .form-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .apply-cta .btn-outline { margin-left: 0; margin-top: 0.75rem; }
+      .apply-cta { padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Nav ─────────────────────────────────────────── -->
+  <nav id="navbar">
+    <a href="index.html" class="logo"><img src="logo.png" alt="Cognita Mindcare" height="70"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="internships.html" class="active">Internships</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── Hero ─────────────────────────────────────────── -->
+  <section class="page-hero">
+    <p class="page-hero-eyebrow">Paid · Remote · Psychology in Practice</p>
+    <h1>Internship <span class="accent">Programme</span></h1>
+    <p>A structured, immersive internship designed to help you move beyond theory and truly understand psychology in practice.</p>
+    <a href="#apply" class="btn btn-primary">Apply Now &rarr;</a>
+  </section>
+
+  <!-- ─── Stats Strip ───────────────────────────────────── -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-value">240</span>
+        <span class="stat-label">Programme Hours</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">5</span>
+        <span class="stat-label">Days a Week</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">100%</span>
+        <span class="stat-label">Remote</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">Paid</span>
+        <span class="stat-label">Internship</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Who Is This For ───────────────────────────────── -->
+  <section class="section-wrap bg-blue">
+    <div class="container">
+      <div class="section-header">
+        <h2>Who Is This For?</h2>
+        <p>Two dedicated tracks designed for where you are in your journey.</p>
+      </div>
+      <div class="cards-grid-2">
+
+        <div class="card">
+          <div class="card-icon">🎓</div>
+          <span class="tag">Students — Counselling Psychology</span>
+          <h3>Build Your Foundations</h3>
+          <ul>
+            <li>Build strong counselling foundations through real-world exposure</li>
+            <li>Understand real-life case applications beyond the classroom</li>
+            <li>Develop your therapeutic communication and listening skills</li>
+            <li>Work alongside an experienced practitioner as your mentor</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💼</div>
+          <span class="tag">Working Professionals — Organisational Psychology</span>
+          <h3>Apply Psychology at Work</h3>
+          <ul>
+            <li>Apply psychology principles in real workplace settings</li>
+            <li>Understand employee behaviour, motivation, and group dynamics</li>
+            <li>Support workplace well-being and productivity initiatives</li>
+            <li>Gain structured corporate psychology experience</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── What You Will Learn ───────────────────────────── -->
+  <section class="section-wrap bg-cream">
+    <div class="container">
+      <div class="section-header">
+        <h2>What You Will Learn</h2>
+        <p>A comprehensive curriculum that bridges academic knowledge with real-world practice.</p>
+      </div>
+      <div class="learn-grid">
+        <div class="learn-item">
+          <h4>Counselling Skills & Techniques</h4>
+          <p>Core therapeutic approaches, active listening, and evidence-based intervention strategies.</p>
+        </div>
+        <div class="learn-item">
+          <h4>Cognitive Understanding & Behaviour</h4>
+          <p>Explore how thoughts, emotions, and behaviours interconnect in clinical and everyday contexts.</p>
+        </div>
+        <div class="learn-item">
+          <h4>Ethics & Professional Boundaries</h4>
+          <p>Navigate complex ethical situations with confidence, integrity, and professional standards.</p>
+        </div>
+        <div class="learn-item">
+          <h4>Real-Life Case Analysis</h4>
+          <p>Case-based learning after every session — analyse, discuss, and draw practical insights.</p>
+        </div>
+        <div class="learn-item">
+          <h4>Psychological Application — Personal</h4>
+          <p>Apply psychology to everyday life situations including stress, identity, relationships, and growth.</p>
+        </div>
+        <div class="learn-item">
+          <h4>Psychological Application — Corporate</h4>
+          <p>Understand workplace dynamics, leadership psychology, and organisational well-being strategies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── How It Works ──────────────────────────────────── -->
+  <section class="section-wrap bg-gray">
+    <div class="container">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <p>A structured, guided experience from day one to completion.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Weekly Sessions</h4>
+          <p>Structured sessions conducted 5 days a week with guided curriculum and live discussions.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Case Discussions</h4>
+          <p>After every session, engage in real case-based learning to sharpen your applied thinking.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Mentorship & Feedback</h4>
+          <p>Continuous one-on-one mentorship with personalised feedback to support your growth.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Group Learning</h4>
+          <p>Dedicated WhatsApp learning group for peer interaction, Q&amp;A, and shared resources.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Apply Form ─────────────────────────────────────── -->
+  <section class="section-wrap bg-cream" id="apply">
+    <div class="container">
+      <div class="section-header">
+        <h2>Apply Now</h2>
+        <p>Ready to move beyond theory? Fill in the form and we'll get back to you within 48 hours.</p>
+      </div>
+      <div style="max-width: 680px; margin: 0 auto; background: var(--card-bg); padding: 2.5rem; border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+        <form>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="university">University / Organisation</label>
+              <input type="text" id="university" placeholder="Where you study or work" />
+            </div>
+            <div class="form-group">
+              <label for="track">Programme Track</label>
+              <select id="track">
+                <option value="">Select your track</option>
+                <option>Counselling Psychology (Students)</option>
+                <option>Organisational Psychology (Professionals)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="motivation">Why do you want to join this programme?</label>
+            <textarea id="motivation" placeholder="Tell us what motivates you and what you hope to gain..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding: 1rem;">Submit Application &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Cognita Mindcare</div>
+        <p class="footer-desc">Empowering individuals and organizations through evidence-based psychology and transformative coaching.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+          <li><a href="internships.html">Internships</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <div class="contact-item"><span>✉</span><span>hello@cognitamindcare.com</span></div>
+        <div class="contact-item"><span>&#9742;</span><span>+1 (555) 123-4567</span></div>
+        <div class="contact-item"><span>&#9711;</span><span>Remote — Worldwide</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Cognita Mindcare. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.style.boxShadow = window.scrollY > 10 ? '0 2px 16px rgba(0,0,0,0.08)' : '0 1px 0 rgba(0,0,0,0.06)'; });
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } }), { threshold: 0.1 });
+    document.querySelectorAll('.card, .learn-item, .step').forEach(el => { el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity .5s ease, transform .5s ease'; observer.observe(el); });
+  </script>
+
+</body>
+</html>
