@@ -44,18 +44,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 3rem;
+      padding: 0.6rem 3rem;
       box-shadow: 0 1px 0 rgba(0,0,0,0.06);
     }
 
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1.25;
-      color: var(--teal);
-      text-decoration: none;
-    }
+    .logo { display: flex; align-items: center; text-decoration: none; }
 
     .nav-links {
       list-style: none;
@@ -508,7 +501,7 @@
 
   <!-- ─── Navigation ─────────────────────────────────── -->
   <nav id="navbar">
-    <a href="index.html" class="logo">Cognita Mindcare</a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Cognita Mindcare" height="70"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
