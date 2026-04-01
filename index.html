@@ -192,9 +192,10 @@
 
     .hero-actions {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.9rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
     }
 
     /* ─── Buttons ────────────────────────────────────── */
@@ -602,13 +603,11 @@
         <p class="hero-subdesc">
           Psychology-driven counselling and corporate training for individuals who want to feel more in control, and organisations ready to build emotionally resilient teams.
         </p>
-        <div class="hero-actions">
+        <div class="hero-actions" style="display:flex; flex-wrap:wrap; align-items:center; gap:0.75rem;">
           <a href="services.html" class="btn btn-primary">Explore Services &rarr;</a>
           <a href="contact.html"  class="btn btn-outline">Book a Consultation</a>
-        </div>
-        <div style="display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:1rem;">
-          <a href="https://wa.me/919677711254?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%2030-minute%20session." target="_blank" rel="noopener" class="btn btn-primary" style="background:#25D366; border-color:#25D366;">&#128232; WhatsApp</a>
-          <a href="tel:+919677711254" class="btn btn-outline">&#9742; Call Us</a>
+          <a href="https://wa.me/919677711254?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%2030-minute%20session." target="_blank" rel="noopener" title="WhatsApp" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#25D366;color:#fff;font-size:1.1rem;text-decoration:none;">&#128232;</a>
+          <a href="tel:+919677711254" title="Call Us" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;font-size:1.1rem;text-decoration:none;">&#9742;</a>
         </div>
       </div>
 
