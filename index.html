@@ -270,8 +270,9 @@
 
     .hero-badge {
       position: absolute;
-      bottom: -10px;
-      left: -18px;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
       background: #fff;
       padding: 0.65rem 1.1rem;
       border-radius: 9px;
@@ -537,7 +538,7 @@
       .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
       .hero-visual { order: -1; display: flex; justify-content: center; }
       .hero-photo { width: 180px; height: 200px; }
-      .hero-badge { bottom: -8px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; padding: 0.5rem 0.9rem; }
+      .hero-badge { font-size: 0.75rem; padding: 0.5rem 0.9rem; }
       .hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
       .hero-desc { font-size: 0.9rem; }
       .hero-content { min-width: 0; overflow: hidden; }
