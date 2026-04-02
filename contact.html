@@ -171,23 +171,22 @@
         <!-- Form -->
         <div class="card" style="padding:2rem;">
           <h3 style="font-family:'Playfair Display',serif; color:var(--teal-dark); margin-bottom:1.5rem;">Send a Message</h3>
-          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-          <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLScMDkM52LrjEAbrha5vnWQFaVgMQ9lttlfCLUryI4NZXUTtqA/formResponse" method="POST" target="hidden_iframe">
+          <form id="contactForm">
             <div class="form-group">
               <label for="name">Full Name</label>
-              <input type="text" id="name" name="entry.1099957508" placeholder="Your full name" required />
+              <input type="text" id="name" placeholder="Your full name" required />
             </div>
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" name="entry.1725509041" placeholder="your@email.com" required />
+              <input type="email" id="email" placeholder="your@email.com" required />
             </div>
             <div class="form-group">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="entry.91145827" placeholder="+91 XXXXX XXXXX" />
+              <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" />
             </div>
             <div class="form-group">
               <label for="service">I'm interested in...</label>
-              <select id="service" name="entry.1988412490">
+              <select id="service">
                 <option value="">Select a service...</option>
                 <option>Individual Life Coaching</option>
                 <option>Stress &amp; Burnout Recovery</option>
@@ -199,12 +198,8 @@
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="entry.2053380937" placeholder="Tell me a little about what you're looking for..." required></textarea>
+              <textarea id="message" placeholder="Tell me a little about what you're looking for..." required></textarea>
             </div>
-            <input type="hidden" name="fvv" value="1" />
-            <input type="hidden" name="draftResponse" value="[]" />
-            <input type="hidden" name="pageHistory" value="0" />
-            <input type="hidden" id="fbzx" name="fbzx" value="" />
             <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;">Send Message &rarr;</button>
             <div id="formSuccess" style="display:none; margin-top:1rem; padding:1rem; background:#e8f5f4; border-radius:9px; color:var(--teal-dark); font-size:0.9rem; text-align:center;">
               ✅ Message sent! We'll get back to you within 24 hours.
@@ -291,19 +286,32 @@
   </footer>
 
   <script>
-    // Set random fbzx token (required by Google Forms)
-    document.getElementById('fbzx').value = Math.floor(Math.random() * 9e18);
-
-    // Contact Form → Google Forms via hidden iframe
-    document.getElementById('contactForm').addEventListener('submit', function() {
+    // Contact Form → Google Apps Script → Google Sheets
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLctK2mk5GVaCp5z21nUDwUscVKknySi20HI655wnNnr-bLI3kAfkWsxH9SHmrEc6x/exec';
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
       const btn = document.getElementById('submitBtn');
       btn.textContent = 'Sending...';
       btn.disabled = true;
-      setTimeout(function() {
-        document.getElementById('formSuccess').style.display = 'block';
-        document.getElementById('formError').style.display = 'none';
-        btn.textContent = 'Sent ✓';
-      }, 1500);
+      const params = new URLSearchParams({
+        name:    document.getElementById('name').value,
+        email:   document.getElementById('email').value,
+        phone:   document.getElementById('phone').value,
+        service: document.getElementById('service').value,
+        message: document.getElementById('message').value
+      });
+      fetch(SCRIPT_URL, { method: 'POST', body: params, mode: 'no-cors' })
+        .then(() => {
+          document.getElementById('formSuccess').style.display = 'block';
+          document.getElementById('formError').style.display = 'none';
+          btn.textContent = 'Sent ✓';
+          document.getElementById('contactForm').reset();
+        })
+        .catch(() => {
+          document.getElementById('formError').style.display = 'block';
+          btn.textContent = 'Send Message →';
+          btn.disabled = false;
+        });
     });
 
     const hamburger = document.getElementById('hamburger');
