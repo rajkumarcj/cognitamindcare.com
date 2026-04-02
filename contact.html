@@ -299,11 +299,11 @@
       const btn = document.getElementById('submitBtn');
       btn.textContent = 'Sending...';
       btn.disabled = true;
-      document.getElementById('hidden_iframe').onload = function() {
+      setTimeout(function() {
         document.getElementById('formSuccess').style.display = 'block';
         document.getElementById('formError').style.display = 'none';
         btn.textContent = 'Sent ✓';
-      };
+      }, 1500);
     });
 
     const hamburger = document.getElementById('hamburger');
