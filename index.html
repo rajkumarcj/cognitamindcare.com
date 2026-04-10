@@ -149,7 +149,7 @@
       margin: 0 auto;
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 3rem;
       align-items: center;
     }
@@ -233,54 +233,6 @@
     .btn-outline:hover {
       border-color: var(--teal);
       color: var(--teal);
-    }
-
-    /* ─── Hero Image ─────────────────────────────────── */
-    .hero-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-photo {
-      width: 340px;
-      height: 440px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hero-photo img,
-    .hero-photo .img-placeholder {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .img-placeholder {
-      background: linear-gradient(145deg, #C6CFC8 0%, #A8B8AC 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,.55);
-      font-size: 0.8rem;
-      letter-spacing: .05em;
-    }
-
-    .hero-badge {
-      position: absolute;
-      bottom: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #fff;
-      padding: 0.65rem 1.1rem;
-      border-radius: 9px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text);
-      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
-      white-space: nowrap;
     }
 
     /* ─── Section Shared ─────────────────────────────── */
@@ -535,10 +487,6 @@
       .nav-hamburger { display: flex; }
 
       .hero { padding: 5.5rem 1.5rem 3rem; }
-      .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-      .hero-visual { order: -1; display: flex; justify-content: center; }
-      .hero-photo { width: 180px; height: 200px; }
-      .hero-badge { font-size: 0.75rem; padding: 0.5rem 0.9rem; }
       .hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
       .hero-desc { font-size: 0.9rem; }
       .hero-content { min-width: 0; overflow: hidden; }
@@ -618,15 +566,6 @@
             <a href="tel:+918496979197" title="Call Us" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;font-size:1.1rem;text-decoration:none;">&#9742;</a>
           </div>
           <a href="services.html" class="btn btn-primary" style="text-align:center; justify-content:center;">Explore Services &rarr;</a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div style="position:relative; display:inline-block;">
-          <div class="hero-photo">
-            <img src="Photo.jpeg" alt="Cognita Mindcare — Lifestyle Coach &amp; Corporate Psychologist" />
-          </div>
-          <div class="hero-badge">10+ Years Experience</div>
         </div>
       </div>
 
@@ -818,7 +757,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.card, .testimonial-card, .split-content, .split-image, .hero-content, .hero-visual').forEach(el => {
+    document.querySelectorAll('.card, .testimonial-card, .split-content, .split-image, .hero-content').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(24px)';
       el.style.transition = 'opacity .55s ease, transform .55s ease';
