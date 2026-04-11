@@ -60,12 +60,57 @@
     .btn-primary:hover { background: var(--teal-light); border-color: var(--teal-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45,110,97,.3); }
     .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
     .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
-    .page-hero { padding: 9rem 3rem 5rem; background: var(--cream); text-align: center; }
-    .page-hero-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; }
-    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 1.2rem; }
-    .page-hero h1 .accent { color: var(--teal); }
-    .page-hero p { font-size: 1rem; color: var(--muted); max-width: 560px; margin: 0 auto 2rem; line-height: 1.75; }
-    .section-wrap { padding: 6rem 3rem; }
+    /* ─── About Hero (split) ─────────────────────────── */
+    .about-hero {
+      background: var(--cream);
+      padding: 7rem 3rem 3rem;
+    }
+    .about-hero-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-hero-eyebrow {
+      font-size: 1.1rem !important;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rose) !important;
+      margin-bottom: 1rem;
+    }
+    .about-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 1.75rem;
+    }
+    .about-hero h1 .accent { color: var(--teal); }
+    .accent { color: var(--teal); }
+    .about-hero-bio p {
+      font-size: 0.97rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    .about-hero-bio p:last-of-type { margin-bottom: 2rem; }
+    .about-hero-bio em { color: var(--text); font-style: italic; }
+    .about-hero-photo {
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 520px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.12);
+    }
+    .about-hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .section-wrap { padding: 4rem 3rem; }
     .container { max-width: 1160px; margin: 0 auto; }
     .section-header { text-align: center; margin-bottom: 3.25rem; }
     .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.6rem); font-weight: 700; margin-bottom: 0.8rem; }
@@ -117,6 +162,73 @@
     .contact-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 0.75rem; line-height: 1.5; }
     .contact-item .icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
     .footer-bottom { max-width: 1160px; margin: 0 auto; text-align: center; font-size: 0.82rem; color: rgba(255,255,255,.35); }
+    /* ─── Achievements Strip ─────────────────────────── */
+    .achievements-strip {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card-bg);
+    }
+    .achievement-item {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.4rem 2rem;
+      border-bottom: 1px solid var(--border);
+      border-left: 3px solid transparent;
+      transition: border-left-color .2s;
+    }
+    .achievement-item:hover { border-left-color: var(--teal); }
+    .achievement-item:last-child { border-bottom: none; }
+    .achievement-icon { font-size: 1.6rem; flex-shrink: 0; line-height: 1; }
+    .achievement-text { display: flex; flex-direction: column; gap: 0.2rem; }
+    .achievement-text strong { font-size: 0.97rem; font-weight: 600; color: var(--text); }
+    .achievement-text span { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+
+    /* ─── About CTA ──────────────────────────────────── */
+    .about-cta {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, #1e5e5a 100%);
+      padding: 6rem 3rem;
+      text-align: center;
+      color: #fff;
+    }
+    .about-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .about-cta p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .about-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-light {
+      background: #fff;
+      color: var(--teal-dark);
+      border-color: #fff;
+      font-weight: 600;
+    }
+    .btn-light:hover { background: var(--cream); border-color: var(--cream); }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.45);
+    }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -130,6 +242,12 @@
       .split-image { height: 260px; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; padding: 0 0 2rem; }
       footer { padding: 3rem 1.5rem 1.5rem; }
+      .about-cta { padding: 4rem 1.5rem; }
+      .achievement-item { padding: 1.1rem 1.25rem; }
+      .about-hero { padding: 6rem 1.5rem 3rem; }
+      .about-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-hero-photo { height: 320px; order: -1; }
+      .about-hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
     }
     @media (min-width: 600px) and (max-width: 900px) {
       .cards-grid { grid-template-columns: 1fr 1fr; }
@@ -163,35 +281,34 @@
   </nav>
 
 
-  <!-- About the Company -->
-  <section class="section-wrap bg-blue">
-    <div class="container">
-      <div class="split-content" style="max-width:720px;margin:0 auto;">
-        <p style="font-size:0.82rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose);margin-bottom:0.75rem;">About Cognita Mindcare</p>
-        <h2>Who We Are</h2>
-        <p>Cognita Mindcare was founded with a single belief: that psychological well-being is the foundation of both personal fulfilment and organisational success. Our approach blends evidence-based psychology with practical, human-centred coaching.</p>
-        <p>We work with executives, teams, and individuals navigating life transitions, stress, burnout, and leadership challenges — delivering measurable, lasting change.</p>
-        <a href="contact.html" class="btn btn-primary">Work With Us &rarr;</a>
+  <!-- About Hero -->
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <div class="about-hero-content">
+        <p class="about-hero-eyebrow">Meet Veroanica</p>
+        <h1>The Person Behind<br><span class="accent">the Practice.</span></h1>
+        <div class="about-hero-bio">
+          <p>I started this work because I kept meeting people who were highly capable but quietly struggling — executives burning out, students losing confidence, teams that had stopped trusting each other.</p>
+          <p>Psychology gave me the language. Coaching gave me the tools. And 10+ years of working with real people in real situations gave me the one thing no degree can teach: knowing when to listen, and when to challenge.</p>
+          <p>I hold a Master's in Psychology with advanced training in counselling and guidance — but what I bring to every session isn't just a framework. It's genuine curiosity about what's holding you back, and a real commitment to helping you move forward.</p>
+          <a href="contact.html" class="btn btn-primary">Work With Me &rarr;</a>
+        </div>
+      </div>
+      <div class="about-hero-photo">
+        <img src="Photo.jpeg" alt="Veroanica — Corporate Psychologist & Lifestyle Coach" />
       </div>
     </div>
   </section>
 
-  <!-- About Me — Personal Bio -->
-  <section class="section-wrap bg-cream">
+  <!-- About the Company -->
+  <section class="section-wrap bg-blue">
     <div class="container">
-      <div class="split">
-        <div class="split-image">
-          <img src="Photo.jpeg" alt="Veroanica — Corporate Psychologist & Lifestyle Mentor" style="width:100%;height:100%;object-fit:cover;" />
-        </div>
-        <div class="split-content">
-          <p style="font-size:0.82rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose);margin-bottom:0.75rem;">About Me</p>
-          <h2>Meet Veroanica</h2>
-          <p>Veroanica is a Corporate Psychologist and Lifestyle Mentor focused on human behaviour, emotional well-being, and meaningful psychological growth. She works with individuals and organisations to move beyond surface-level functioning — into clarity, awareness, and lasting change.</p>
-          <p>With experience across IT organisations and educational institutions, she brings a grounded understanding of individual psychology and group dynamics, bridging academic rigour with real-world impact.</p>
-          <p>She holds a Master's degree in Psychology with advanced training in counselling, guidance, and strategic thinking — enabling evidence-based, client-centred interventions.</p>
-          <p><em>Her philosophy: true growth happens when insight meets action.</em></p>
-          <a href="contact.html" class="btn btn-primary">Work With Me &rarr;</a>
-        </div>
+      <div class="split-content">
+        <p class="about-hero-eyebrow">About Cognita Mindcare</p>
+        <h2>Founded on <span class="accent">One Belief.</span></h2>
+        <p>Cognita Mindcare was founded on a single belief: psychological well-being is the foundation of both personal fulfilment and organisational success. We blend evidence-based psychology with practical, human-centred coaching — working with individuals and organisations across the globe, entirely remotely, to create change that lasts.</p>
+        <p>Over 10 years of practice, 200+ sessions conducted across the globe.</p>
+        <a href="contact.html" class="btn btn-primary">Work With Us &rarr;</a>
       </div>
     </div>
   </section>
@@ -201,21 +318,21 @@
     <div class="container">
       <div class="section-header">
         <h2>What We Stand For</h2>
-        <p>The principles that guide every session, workshop, and engagement.</p>
+        <p>What you can always expect from us.</p>
       </div>
       <div class="cards-grid">
         <div class="card">
-          <div class="card-icon">&#9825;</div>
+          <div class="card-icon">🤝</div>
           <h3>Compassion First</h3>
           <p>Every person deserves to be heard without judgement. We create safe spaces where real growth begins.</p>
         </div>
         <div class="card">
-          <div class="card-icon">&#9878;</div>
+          <div class="card-icon">📊</div>
           <h3>Evidence-Based</h3>
           <p>Our methods are grounded in psychology — integrating counselling, guidance, and strategic thinking for real-world results.</p>
         </div>
         <div class="card">
-          <div class="card-icon">&#10022;</div>
+          <div class="card-icon">⚡</div>
           <h3>Insight Meets Action</h3>
           <p>True growth happens when awareness translates into change. We bridge the gap between understanding and transformation.</p>
         </div>
@@ -230,54 +347,47 @@
         <h2>Credentials &amp; Experience</h2>
         <p>A foundation of academic rigour and hands-on professional experience.</p>
       </div>
-      <div class="cards-grid-2">
-        <div class="card">
-          <div class="card-icon">🎓</div>
-          <h3>Master's in Psychology</h3>
-          <p>Advanced academic training in human behaviour, emotional well-being, and psychological growth.</p>
+      <div class="achievements-strip">
+        <div class="achievement-item">
+          <div class="achievement-icon">🎓</div>
+          <div class="achievement-text">
+            <strong>Master's in Psychology</strong>
+            <span>Human behaviour, emotional well-being &amp; psychological growth</span>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon">📜</div>
-          <h3>Counselling &amp; Guidance</h3>
-          <p>Advanced training in counselling, guidance, and strategic thinking — applied across individual and group settings.</p>
+        <div class="achievement-item">
+          <div class="achievement-icon">📜</div>
+          <div class="achievement-text">
+            <strong>Counselling &amp; Guidance</strong>
+            <span>Advanced training across individual and group settings</span>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon">💼</div>
-          <h3>IT &amp; Corporate Sectors</h3>
-          <p>10+ years working with professionals in IT and corporate environments to navigate complexity and drive performance.</p>
+        <div class="achievement-item">
+          <div class="achievement-icon">💼</div>
+          <div class="achievement-text">
+            <strong>10+ Years in Corporate</strong>
+            <span>IT &amp; corporate sectors — navigating complexity &amp; performance</span>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon">🏛</div>
-          <h3>Educational Institutions</h3>
-          <p>Deep experience in educational settings, understanding student and faculty dynamics, and building psychologically safe environments.</p>
+        <div class="achievement-item">
+          <div class="achievement-icon">🏛️</div>
+          <div class="achievement-text">
+            <strong>Educational Institutions</strong>
+            <span>Building psychologically safe environments for students &amp; faculty</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section-wrap bg-gray">
-    <div class="container">
-      <div class="section-header">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-      <div class="cards-grid-2">
-        <div class="card" style="transition:none;">
-          <h3>How long is a typical coaching engagement?</h3>
-          <p>Most individual coaching packages run 8–12 sessions over 3–6 months. We also offer single sessions and intensive 1-day formats.</p>
-        </div>
-        <div class="card" style="transition:none;">
-          <h3>Do you offer virtual sessions?</h3>
-          <p>Yes — all individual coaching and most workshops are available virtually via Zoom, making it accessible regardless of your location.</p>
-        </div>
-        <div class="card" style="transition:none;">
-          <h3>Is coaching confidential?</h3>
-          <p>Absolutely. All sessions are strictly confidential. The only exceptions are standard duty-of-care situations, which we discuss openly at the outset.</p>
-        </div>
-        <div class="card" style="transition:none;">
-          <h3>How is coaching different from therapy?</h3>
-          <p>Coaching focuses on your present goals and future potential. Therapy addresses past trauma and mental health conditions. Many clients benefit from both.</p>
-        </div>
+  <!-- CTA -->
+  <section class="about-cta">
+    <div style="max-width:640px; margin:0 auto; text-align:center;">
+      <h2>Ready to Work Together?</h2>
+      <p>Whether you're an individual seeking clarity or an organisation building a healthier culture — the first conversation is free.</p>
+      <div class="about-cta-actions">
+        <a href="contact.html" class="btn btn-light">Book Your Free Session</a>
+        <a href="https://wa.me/918496979197?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services." target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>
       </div>
     </div>
   </section>
