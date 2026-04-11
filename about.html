@@ -116,9 +116,11 @@
     .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.6rem); font-weight: 700; margin-bottom: 0.8rem; }
     .section-header p { color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.65; font-size: 0.95rem; }
     .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .cards-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
     .cards-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-    .card { background: var(--card-bg); border-radius: var(--radius); padding: 2rem 1.75rem; transition: transform .28s ease, box-shadow .28s ease; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+    .card { background: var(--card-bg); border-radius: var(--radius); padding: 2rem 1.75rem; transition: transform .28s ease, box-shadow .28s ease; border-top: 3px solid transparent; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); border-top-color: var(--teal); }
+    .card.card-featured { border-top-color: var(--teal); box-shadow: 0 8px 32px rgba(58,171,160,0.12); }
     .card-icon { font-size: 1.7rem; margin-bottom: 1.2rem; color: var(--teal); line-height: 1; }
     .card h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 0.65rem; line-height: 1.25; }
     .card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.5rem; }
@@ -237,6 +239,7 @@
       .page-hero { padding: 7rem 1.5rem 3rem; }
       .section-wrap { padding: 4rem 1.5rem; }
       .cards-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .cards-grid-4 { grid-template-columns: 1fr 1fr; gap: 1rem; }
       .cards-grid-2 { grid-template-columns: 1fr; gap: 1rem; }
       .split { grid-template-columns: 1fr; gap: 2rem; }
       .split-image { height: 260px; }
@@ -320,27 +323,33 @@
         <h2>What We Stand For</h2>
         <p>What you can always expect from us.</p>
       </div>
-      <div class="cards-grid">
-        <div class="card">
+      <div class="cards-grid-4">
+        <div class="card card-featured">
           <div class="card-icon">🤝</div>
           <h3>Compassion First</h3>
-          <p>Every person deserves to be heard without judgement. We create safe spaces where real growth begins.</p>
+          <p>Most people have never had a conversation where they felt completely safe to say the unsayable. That's where we start.</p>
         </div>
-        <div class="card">
+        <div class="card card-featured">
           <div class="card-icon">📊</div>
           <h3>Evidence-Based</h3>
-          <p>Our methods are grounded in psychology — integrating counselling, guidance, and strategic thinking for real-world results.</p>
+          <p>Every method we use is grounded in decades of psychological research — because you deserve more than good intentions.</p>
         </div>
-        <div class="card">
+        <div class="card card-featured">
           <div class="card-icon">⚡</div>
           <h3>Insight Meets Action</h3>
-          <p>True growth happens when awareness translates into change. We bridge the gap between understanding and transformation.</p>
+          <p>Knowing yourself is not the finish line. We push until awareness becomes a decision, a habit, a life that actually feels different.</p>
+        </div>
+        <div class="card card-featured">
+          <div class="card-icon">🔒</div>
+          <h3>Safe &amp; Confidential</h3>
+          <p>What you share stays here — always. And while we guide, challenge, and support, the direction is always yours. We don't tell you what to do; we help you find what you already know.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Credentials -->
+
   <section class="section-wrap bg-cream">
     <div class="container">
       <div class="section-header">
