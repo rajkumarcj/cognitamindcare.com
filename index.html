@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cognita Mindcare | Lifestyle Coach & Corporate Psychologist</title>
-  <meta name="description" content="Cognita Mindcare offers individual life coaching, corporate psychology, and workshops to help you transform your mind, career, and organisation." />
+  <title>Cognita Mindcare | Life Coach & Corporate Psychologist in Bengaluru</title>
+  <meta name="description" content="Feeling stuck, anxious, or overwhelmed? Cognita Mindcare offers psychology-driven life coaching and corporate training in Bengaluru. Book your free 30-min session today." />
   <meta name="keywords" content="lifestyle coach, corporate psychologist, mental wellness, life coaching, corporate training, mindfulness, psychology consultant, India" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cognitamindcare.com/" />
@@ -12,15 +12,15 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cognitamindcare.com/" />
-  <meta property="og:title" content="Cognita Mindcare | Lifestyle Coach & Corporate Psychologist" />
-  <meta property="og:description" content="Cognita Mindcare offers individual life coaching, corporate psychology, and workshops to help you transform your mind, career, and organisation." />
+  <meta property="og:title" content="Your Next Chapter Starts With One Conversation | Cognita Mindcare" />
+  <meta property="og:description" content="Feeling stuck, anxious, or overwhelmed? Psychology-driven life coaching and corporate training in Bengaluru. Book your free 30-min session today." />
   <meta property="og:image" content="https://cognitamindcare.com/logo.png" />
   <meta property="og:site_name" content="Cognita Mindcare" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cognita Mindcare | Lifestyle Coach & Corporate Psychologist" />
-  <meta name="twitter:description" content="Cognita Mindcare offers individual life coaching, corporate psychology, and workshops to help you transform your mind, career, and organisation." />
+  <meta name="twitter:title" content="Your Next Chapter Starts With One Conversation | Cognita Mindcare" />
+  <meta name="twitter:description" content="Feeling stuck, anxious, or overwhelmed? Psychology-driven life coaching and corporate training in Bengaluru. Book your free 30-min session today." />
   <meta name="twitter:image" content="https://cognitamindcare.com/logo.png" />
 
   <script type="application/ld+json">
@@ -137,63 +137,64 @@
 
     /* ─── Hero ───────────────────────────────────────── */
     .hero {
-      min-height: 100vh;
-      background: var(--cream);
-      padding: 7rem 3rem 5rem;
+      background: radial-gradient(ellipse at 70% 30%, rgba(58,171,160,0.10) 0%, transparent 55%),
+                  radial-gradient(ellipse at 20% 80%, rgba(196,168,176,0.10) 0%, transparent 50%),
+                  var(--cream);
+      padding: 6rem 3rem 3rem;
       display: flex;
       align-items: center;
+      text-align: center;
     }
 
     .hero-inner {
-      max-width: 1160px;
+      max-width: 1100px;
       margin: 0 auto;
       width: 100%;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      align-items: center;
     }
 
     .hero-eyebrow {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--rose);
+      color: #A0828C;
+      margin-top: 1.5rem;
       margin-bottom: 1.4rem;
     }
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-size: clamp(2.2rem, 3.8vw, 3.8rem);
       font-weight: 700;
-      line-height: 1.08;
+      line-height: 1.15;
       color: var(--text);
       margin-bottom: 1.5rem;
     }
 
     .hero h1 .accent { color: var(--teal); }
 
+
     .hero-desc {
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.75;
       color: var(--text);
-      max-width: 400px;
-      margin-bottom: 0.6rem;
+      max-width: 600px;
+      margin: 0 auto 0.6rem;
       font-weight: 500;
     }
     .hero-subdesc {
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       line-height: 1.75;
       color: var(--muted);
-      max-width: 400px;
-      margin-bottom: 0.6rem;
+      max-width: 780px;
+      margin: 0 auto 1.5rem;
     }
 
     .hero-actions {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
       gap: 0.75rem;
     }
@@ -233,6 +234,241 @@
     .btn-outline:hover {
       border-color: var(--teal);
       color: var(--teal);
+    }
+
+    /* ─── Trust Strip ───────────────────────────────── */
+    .trust-strip {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      margin-top: 2rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .trust-item .trust-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    /* ─── Stats Bar ──────────────────────────────────── */
+    .stats-bar {
+      background: var(--teal-dark);
+      padding: 3rem;
+    }
+    .stats-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-item {}
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--teal-light);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,.65);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── Who Is This For — Two Panel ───────────────── */
+    .audience-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .audience-panel {
+      padding: 5rem 4rem;
+    }
+    .audience-panel.panel-individual {
+      background: var(--cream);
+    }
+    .audience-panel.panel-corporate {
+      background: var(--teal-dark);
+      color: #fff;
+    }
+    .audience-panel .panel-eyebrow {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .panel-individual .panel-eyebrow { color: var(--rose); }
+    .panel-corporate .panel-eyebrow { color: var(--teal-light); }
+    .audience-panel h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.75rem;
+    }
+    .panel-individual h2 { color: var(--text); }
+    .panel-corporate h2 { color: #fff; }
+    .panel-questions {
+      list-style: none;
+      margin-bottom: 2.5rem;
+    }
+    .panel-questions li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.97rem;
+      line-height: 1.55;
+      margin-bottom: 1.1rem;
+      font-weight: 500;
+    }
+    .panel-individual .panel-questions li { color: var(--text); }
+    .panel-corporate .panel-questions li { color: rgba(255,255,255,.9); }
+    .panel-questions li::before {
+      content: '→';
+      flex-shrink: 0;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+    .panel-individual .panel-questions li::before { color: var(--teal); }
+    .panel-corporate .panel-questions li::before { color: var(--teal-light); }
+    .panel-individual .btn-panel {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+    .panel-individual .btn-panel:hover {
+      background: var(--teal-light);
+      border-color: var(--teal-light);
+      transform: translateY(-2px);
+    }
+    .panel-corporate .btn-panel {
+      background: #fff;
+      color: var(--teal-dark);
+      border-color: #fff;
+      font-weight: 600;
+    }
+    .panel-corporate .btn-panel:hover {
+      background: var(--teal-light);
+      color: #fff;
+      border-color: var(--teal-light);
+      transform: translateY(-2px);
+    }
+
+    /* ─── Cards with accent top border ──────────────── */
+    .card { border-top: 3px solid transparent; }
+    .card:hover { border-top-color: var(--teal); }
+    .card.card-featured {
+      border-top-color: var(--teal);
+      box-shadow: 0 8px 32px rgba(58,171,160,0.12);
+    }
+
+    /* ─── FAQ ───────────────────────────────────────── */
+    .faq { background: var(--gray-bg); }
+    .cards-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .faq .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+    .faq .card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── Final CTA ──────────────────────────────────── */
+    .final-cta {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, #1e5e5a 100%);
+      padding: 6rem 3rem;
+      text-align: center;
+      color: #fff;
+    }
+    .final-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .final-cta p {
+      font-size: 1rem;
+      color: rgba(255,255,255,.75);
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+    }
+    .final-cta .btn-light {
+      background: #fff;
+      color: var(--teal-dark);
+      border-color: #fff;
+      font-weight: 600;
+    }
+    .final-cta .btn-light:hover {
+      background: var(--teal-light);
+      color: #fff;
+      border-color: var(--teal-light);
+      transform: translateY(-2px);
+    }
+    .final-cta .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,.85);
+      border-color: rgba(255,255,255,.4);
+    }
+    .final-cta .btn-ghost:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+    .final-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ─── Author Avatar ──────────────────────────────── */
+    .author-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .author-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      flex-shrink: 0;
     }
 
     /* ─── Section Shared ─────────────────────────────── */
@@ -365,7 +601,7 @@
     }
 
     /* ─── Testimonials ───────────────────────────────── */
-    .testimonials { background: var(--gray-bg); padding-top: 3rem; }
+    .testimonials { background: var(--gray-bg); padding-top: 4rem; padding-bottom: 4rem; }
 
     .testimonials .section-header h2 {
       font-size: clamp(2rem, 3vw, 2.6rem);
@@ -487,12 +723,16 @@
       .nav-hamburger { display: flex; }
 
       .hero { padding: 5.5rem 1.5rem 3rem; }
-      .hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
-      .hero-desc { font-size: 0.9rem; }
-      .hero-content { min-width: 0; overflow: hidden; }
-      .hero-actions { display: flex !important; width: 100%; }
-      .hero-actions > div { width: 100%; min-width: 0; }
-      .hero-actions .btn { font-size: 0.75rem !important; padding: 0.75rem 0.9rem !important; white-space: normal !important; }
+      .hero h1 { font-size: clamp(2.2rem, 9vw, 3.5rem); }
+      .hero-desc, .hero-subdesc { max-width: 100%; }
+      .hero-actions { flex-direction: column; align-items: center; }
+
+      .stats-bar { padding: 2rem 1.5rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .audience-split { grid-template-columns: 1fr; }
+      .audience-panel { padding: 3rem 1.5rem; }
+      .final-cta { padding: 4rem 1.5rem; }
+      .cards-grid-2 { grid-template-columns: 1fr; }
 
       .section-wrap { padding: 4rem 1.5rem; }
 
@@ -543,32 +783,44 @@
 
       <div class="hero-content">
         <p class="hero-eyebrow">Lifestyle Coach &amp; Corporate Psychologist</p>
-        <h1>
-          Transform<br>
-          Your<br>
-          Life<br>
-          &amp;<br>
-          <span class="accent">Organization</span>
-        </h1>
-        <p class="hero-desc">
-          Helping you navigate life, emotions, and work — with clarity, strength, and intention.
-        </p>
+        <h1>Your Next Chapter Starts With<br><span class="accent">One Conversation.</span></h1>
         <p class="hero-subdesc">
-          Psychology-driven counselling and corporate training for individuals who want to feel more in control, and organisations ready to build emotionally resilient teams.
+          Whether you're navigating personal challenges or leading an organisation —<br>evidence-based coaching gives you the clarity, confidence, and tools to move forward.
         </p>
-        <p style="font-size:0.92rem; line-height:1.75; color:var(--text); font-weight:500; max-width:400px; margin-bottom:1.25rem;">
-          You don't have to stay stuck where you are. Take the first step without pressure.
+        <p style="font-size:0.95rem; line-height:1.75; color:var(--text); font-weight:500; max-width:560px; margin:0 auto 1.5rem;">
+          Your first session is free. No pressure. Just a conversation.
         </p>
-        <div class="hero-actions" style="display:inline-flex; flex-direction:column; align-items:stretch; gap:0.75rem;">
-          <div style="display:flex; align-items:center; gap:0.75rem;">
-            <a href="contact.html" class="btn btn-primary" style="white-space:nowrap; font-size:0.82rem; flex:1; justify-content:center;">Book Your First 30-Min Free Session Today</a>
-            <a href="https://wa.me/918496979197?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%2030-minute%20session." target="_blank" rel="noopener" title="WhatsApp" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#25D366;color:#fff;text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-            <a href="tel:+918496979197" title="Call Us" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;font-size:1.1rem;text-decoration:none;">&#9742;</a>
-          </div>
-          <a href="services.html" class="btn btn-primary" style="text-align:center; justify-content:center;">Explore Services &rarr;</a>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Book Your Free 30-Min Session</a>
+          <a href="https://wa.me/918496979197?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%2030-minute%20session." target="_blank" rel="noopener" title="WhatsApp" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#25D366;color:#fff;text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          <a href="tel:+918496979197" title="Call Us" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;font-size:1.1rem;text-decoration:none;">&#9742;</a>
+          <a href="services.html" class="btn btn-outline">Explore Services &rarr;</a>
         </div>
+
       </div>
 
+    </div>
+  </section>
+
+  <!-- ─── Stats Bar ─────────────────────────────────── -->
+  <section class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Years of Practice</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Sessions Delivered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">30+</div>
+        <div class="stat-label">Organisations Served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4.9★</div>
+        <div class="stat-label">Average Client Rating</div>
+      </div>
     </div>
   </section>
 
@@ -580,14 +832,14 @@
       </div>
       <div class="cards-grid">
 
-        <div class="card">
+        <div class="card card-featured">
           <div class="card-icon">&#9825;</div>
           <h3>Individual<br>Services</h3>
           <p>Personal coaching, stress management, and life transitions support to help you thrive.</p>
           <a href="services.html" class="card-link">Learn more &rarr;</a>
         </div>
 
-        <div class="card">
+        <div class="card card-featured">
           <div class="card-icon">&#129504;</div>
           <h3>Corporate<br>Psychology</h3>
           <p>Organizational assessments, leadership development, and workplace well-being programs.</p>
@@ -610,66 +862,147 @@
 
       </div>
 
-      <div style="text-align:center; margin-top:2.5rem;">
-        <p style="font-size:1rem; color:var(--muted); margin-bottom:1rem;">Not sure where to start? Let's talk.</p>
-        <a href="contact.html" class="btn btn-primary" style="font-size:0.95rem;">👉 Book Your First 30-Min Free Session Today</a>
-      </div>
 
     </div>
   </section>
+
+  <!-- ─── Who Is This For — Two Panel ─────────────── -->
+  <div class="audience-split">
+
+    <!-- Individuals -->
+    <div class="audience-panel panel-individual">
+      <p class="panel-eyebrow">For Individuals</p>
+      <h2>Does any of this sound like you?</h2>
+      <ul class="panel-questions">
+        <li>Do you feel anxious about your future — but can't pinpoint why?</li>
+        <li>Do you feel stuck, like you're capable of more but can't move forward?</li>
+        <li>Are you worried about your career — direction, growth, or meaning?</li>
+        <li>Do you want to build stronger relationships, professionally and personally?</li>
+        <li>Are stress, overthinking, or self-doubt quietly holding you back?</li>
+      </ul>
+      <a href="contact.html" class="btn btn-panel">I'm Ready to Start &rarr;</a>
+    </div>
+
+    <!-- Corporates -->
+    <div class="audience-panel panel-corporate">
+      <p class="panel-eyebrow">For Organisations</p>
+      <h2>Build a high-performance culture?</h2>
+      <ul class="panel-questions">
+        <li>Looking for better team performance and measurable results?</li>
+        <li>Need stronger leadership skills that actually move the needle?</li>
+        <li>Want the psychological edge as AI reshapes how we work?</li>
+        <li>Struggling with burnout, disengagement, or high attrition?</li>
+        <li>Want to turn emotional intelligence into a competitive advantage?</li>
+      </ul>
+      <a href="contact.html" class="btn btn-panel">Let's Talk &rarr;</a>
+    </div>
+
+  </div>
 
   <!-- ─── Testimonials ───────────────────────────────── -->
   <section class="section-wrap testimonials" id="blog">
     <div class="container">
       <div class="section-header">
         <h2>What Clients Say</h2>
+        <p>Real experiences from individuals and organisations who chose to grow.</p>
       </div>
       <div class="cards-grid">
 
         <div class="testimonial-card">
-
+          <div class="stars">★★★★★</div>
           <blockquote>
             "The internship programme at Cognita Mindcare gave me more real-world insight in 3 months than I gained in years of study. Veroanica's mentorship is exceptional."
           </blockquote>
-          <div>
-            <span class="author-name">Ananya R.</span>
-            <span class="author-role">Psychology Graduate</span>
+          <div class="author-row">
+            <div class="author-avatar">AR</div>
+            <div>
+              <span class="author-name">Ananya R.</span>
+              <span class="author-role">Psychology Graduate</span>
+            </div>
           </div>
         </div>
 
         <div class="testimonial-card">
-
+          <div class="stars">★★★★★</div>
           <blockquote>
             "Veroanica helped our leadership team build emotional resilience during a period of rapid change. The results were immediate and measurable."
           </blockquote>
-          <div>
-            <span class="author-name">Rahul S.</span>
-            <span class="author-role">CEO, EdTech Startup</span>
+          <div class="author-row">
+            <div class="author-avatar">RS</div>
+            <div>
+              <span class="author-name">Rahul S.</span>
+              <span class="author-role">CEO, EdTech Startup</span>
+            </div>
           </div>
         </div>
 
         <div class="testimonial-card">
-
+          <div class="stars">★★★★★</div>
           <blockquote>
             "I came to Veroanica feeling stuck. Within weeks, I had a clear direction and the confidence to act on it. Her approach is deeply human and incredibly effective."
           </blockquote>
-          <div>
-            <span class="author-name">Meera T.</span>
-            <span class="author-role">Senior Software Engineer</span>
+          <div class="author-row">
+            <div class="author-avatar">MT</div>
+            <div>
+              <span class="author-name">Meera T.</span>
+              <span class="author-role">Senior Software Engineer</span>
+            </div>
           </div>
         </div>
 
         <div class="testimonial-card">
-
+          <div class="stars">★★★★★</div>
           <blockquote>
             "We've worked with several consultants, but none brought the depth and empathy that Veroanica did. Our team's well-being scores have never been higher."
           </blockquote>
-          <div>
-            <span class="author-name">Kavitha N.</span>
-            <span class="author-role">Head of People Operations</span>
+          <div class="author-row">
+            <div class="author-avatar">KN</div>
+            <div>
+              <span class="author-name">Kavitha N.</span>
+              <span class="author-role">Head of People Operations</span>
+            </div>
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─────────────────────────────────────────── -->
+  <section class="section-wrap faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="cards-grid-2">
+        <div class="card">
+          <h3>How long is a typical coaching engagement?</h3>
+          <p>Most individual coaching packages run 8–12 sessions over 3–6 months. We also offer single sessions and intensive 1-day formats.</p>
+        </div>
+        <div class="card">
+          <h3>Do you offer virtual sessions?</h3>
+          <p>Yes — all individual coaching and most workshops are available virtually via Zoom, making it accessible regardless of your location.</p>
+        </div>
+        <div class="card">
+          <h3>Is coaching confidential?</h3>
+          <p>Absolutely. All sessions are strictly confidential. The only exceptions are standard duty-of-care situations, which we discuss openly at the outset.</p>
+        </div>
+        <div class="card">
+          <h3>How is coaching different from therapy?</h3>
+          <p>Coaching focuses on your present goals and future potential. Therapy addresses past trauma and mental health conditions. Many clients benefit from both.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Final CTA ───────────────────────────────────── -->
+  <section class="final-cta">
+    <div style="max-width:640px; margin:0 auto;">
+      <h2>Ready to Begin?</h2>
+      <p>Your first session is free, 30 minutes, and completely pressure-free. Let's find out if we're the right fit.</p>
+      <div class="final-cta-actions">
+        <a href="contact.html" class="btn btn-light">Book Your Free Session</a>
+        <a href="https://wa.me/918496979197?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services." target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>
       </div>
     </div>
   </section>
@@ -757,7 +1090,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.card, .testimonial-card, .split-content, .split-image, .hero-content').forEach(el => {
+    document.querySelectorAll('.card, .testimonial-card, .split-content, .split-image, .hero-content, .audience-panel, .stat-item').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(24px)';
       el.style.transition = 'opacity .55s ease, transform .55s ease';
