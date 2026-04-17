@@ -177,6 +177,29 @@
     .contact-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 0.75rem; }
     .footer-bottom { max-width: 1160px; margin: 0 auto; text-align: center; font-size: 0.82rem; color: rgba(255,255,255,.35); }
 
+    /* ─── Who Is This For — Two Panel ───────────────── */
+    .audience-split { display: grid; grid-template-columns: 1fr 1fr; }
+    .audience-panel { padding: 5rem 4rem; }
+    .audience-panel.panel-individual { background: var(--cream); }
+    .audience-panel.panel-corporate { background: var(--teal-dark); color: #fff; }
+    .audience-panel .panel-eyebrow { font-size: 1.1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
+    .panel-individual .panel-eyebrow { color: var(--rose); }
+    .panel-corporate .panel-eyebrow { color: var(--teal-light); }
+    .audience-panel h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.75rem; }
+    .panel-individual h2 { color: var(--text); }
+    .panel-corporate h2 { color: #fff; }
+    .panel-questions { list-style: none; margin-bottom: 2.5rem; }
+    .panel-questions li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.97rem; line-height: 1.55; margin-bottom: 1.1rem; font-weight: 500; }
+    .panel-individual .panel-questions li { color: var(--text); }
+    .panel-corporate .panel-questions li { color: rgba(255,255,255,.9); }
+    .panel-questions li::before { content: '→'; flex-shrink: 0; font-weight: 700; margin-top: 1px; }
+    .panel-individual .panel-questions li::before { color: var(--teal); }
+    .panel-corporate .panel-questions li::before { color: var(--teal-light); }
+    .panel-individual .btn-panel { background: var(--teal); color: #fff; border-color: var(--teal); }
+    .panel-individual .btn-panel:hover { background: var(--teal-light); border-color: var(--teal-light); transform: translateY(-2px); }
+    .panel-corporate .btn-panel { background: #fff; color: var(--teal-dark); border-color: #fff; font-weight: 600; }
+    .panel-corporate .btn-panel:hover { background: var(--teal-light); color: #fff; border-color: var(--teal-light); transform: translateY(-2px); }
+
     /* ─── Responsive ──────────────────────────────────── */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
@@ -184,6 +207,9 @@
       .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 1.5rem; gap: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
       .nav-hamburger { display: flex; }
       .page-hero { padding: 7rem 1.5rem 4rem; }
+      .page-hero .hero-subtitle { white-space: normal !important; max-width: 100% !important; }
+      .audience-split { grid-template-columns: 1fr; }
+      .audience-panel { padding: 3rem 1.5rem; }
       .section-wrap { padding: 4rem 1.5rem; }
       .stats-strip { padding: 2rem 1.5rem; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -229,20 +255,26 @@
   <!-- ─── Hero ─────────────────────────────────────────── -->
   <section class="page-hero">
 <h1>Psychology <span class="accent">Internship</span></h1>
-    <p>A practical, online psychology internship with real case exposure, hands-on counselling training, and one-on-one mentorship — open to students and beginners across India.</p>
-    <a href="#apply" class="btn btn-primary">Apply Now &rarr;</a>
+    <p class="hero-subtitle" style="max-width: 800px; white-space: nowrap;">A hands-on internship with real case exposure, mentorship, and a certificate on completion.</p>
+
+    <p style="font-size: 1.05rem; color: var(--text); line-height: 1.9; max-width: 720px; margin: 1.5rem auto; text-align: justify;">Our psychology internship programs are designed for individuals who want to go beyond theory and build real-world experience. Whether you are a psychology student looking for a clinical psychology internship online in India, or a working professional seeking applied psychology training — this programme gives you a structured space to observe, reflect, and apply psychological concepts with real case exposure.</p>
+
+    <ul style="list-style: none; padding: 0; margin: 0 auto 1.75rem; display: inline-block; text-align: left;">
+      <li style="padding: 0.6rem 0; font-size: 1rem; color: var(--text); border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; align-items: center; gap: 0.75rem;"><span style="color: var(--teal); font-size: 1.2rem;">✦</span> <span><strong style="color: var(--teal-dark);">Counselling Psychology Internship</strong> — for students &amp; beginners</span></li>
+      <li style="padding: 0.6rem 0; font-size: 1rem; color: var(--text); display: flex; align-items: center; gap: 0.75rem;"><span style="color: var(--teal); font-size: 1.2rem;">✦</span> <span><strong style="color: var(--teal-dark);">Organisational Psychology Internship</strong> — for working professionals</span></li>
+    </ul>
+
+    <div style="margin-top: 1.5rem;">
+      <a href="#apply" class="btn btn-primary">Apply Now &rarr;</a>
+    </div>
   </section>
 
   <!-- ─── Stats Strip ───────────────────────────────────── -->
   <div class="stats-strip">
     <div class="stats-inner">
       <div class="stat-item">
-        <span class="stat-value">240</span>
-        <span class="stat-label">Programme Hours</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-value">5</span>
-        <span class="stat-label">Days a Week</span>
+        <span class="stat-value">240 hrs</span>
+        <span class="stat-label">Over 5 Days a Week</span>
       </div>
       <div class="stat-item">
         <span class="stat-value">100%</span>
@@ -252,58 +284,77 @@
         <span class="stat-value">Paid</span>
         <span class="stat-label">Internship</span>
       </div>
+      <div class="stat-item">
+        <span class="stat-value">Certificate</span>
+        <span class="stat-label">on Completion</span>
+      </div>
     </div>
   </div>
 
-  <!-- ─── About the Programme ─────────────────────────── -->
-  <section class="section-wrap bg-cream">
-    <div class="container" style="max-width: 760px; text-align: center;">
-      <p style="font-size: 1.05rem; color: var(--text); line-height: 1.85; margin-bottom: 1.5rem;">Our psychology internship programs are designed for individuals who want to go beyond theory and build real-world experience. Whether you are a psychology student looking for a clinical psychology internship online in India, or a working professional seeking applied psychology training — this programme gives you a structured space to observe, reflect, and apply psychological concepts with real case exposure.</p>
-      <p style="font-size: 1rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem;">We currently offer two tracks:</p>
-      <ul style="list-style: none; padding: 0; margin: 0 auto 1.75rem; display: inline-block; text-align: left;">
-        <li style="padding: 0.4rem 0; font-size: 1rem; color: var(--text);">&#8226;&nbsp; <strong>Counselling Psychology Internship</strong> — for students</li>
-        <li style="padding: 0.4rem 0; font-size: 1rem; color: var(--text);">&#8226;&nbsp; <strong>Organisational Psychology Internship</strong> — for working professionals</li>
-      </ul>
-      <p style="font-size: 1rem; color: var(--muted); line-height: 1.75; font-style: italic;">This is not just a course — it is a hands-on counselling internship designed to build clarity, confidence, and professional readiness. Completion includes a certificate recognising your 240 hours of practical psychology training.</p>
-    </div>
-  </section>
-
-  <!-- ─── Who Is This For ───────────────────────────────── -->
-  <section class="section-wrap bg-blue">
+  <!-- ─── How It Works ──────────────────────────────────── -->
+  <section class="section-wrap bg-gray">
     <div class="container">
       <div class="section-header">
-        <h2>Who Is This For?</h2>
-        <p>Two dedicated tracks designed for where you are in your journey.</p>
+        <h2>How It Works</h2>
+        <p>A structured, guided psychology internship experience — from your first session to certification.</p>
       </div>
-      <div class="cards-grid-2">
-
-        <div class="card">
-          <div class="card-icon">🎓</div>
-          <span class="tag">Students & Beginners — Counselling Psychology</span>
-          <h3>Build Your Foundations</h3>
-          <ul>
-            <li>Ideal for psychology internship beginners — no prior experience needed</li>
-            <li>Real case exposure beyond the classroom and textbooks</li>
-            <li>Develop therapeutic communication and active listening skills</li>
-            <li>One-on-one mentorship from an experienced psychology practitioner</li>
-          </ul>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Weekly Sessions</h4>
+          <p>Structured sessions conducted 5 days a week with guided curriculum and live discussions.</p>
         </div>
-
-        <div class="card">
-          <div class="card-icon">💼</div>
-          <span class="tag">Working Professionals — Organisational Psychology</span>
-          <h3>Apply Psychology at Work</h3>
-          <ul>
-            <li>Apply psychology principles in real workplace settings</li>
-            <li>Understand employee behaviour, motivation, and group dynamics</li>
-            <li>Support workplace well-being and productivity initiatives</li>
-            <li>Gain structured corporate psychology experience</li>
-          </ul>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Case Discussions</h4>
+          <p>After every session, engage in real case-based learning to sharpen your applied thinking.</p>
         </div>
-
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Mentorship & Feedback</h4>
+          <p>Continuous one-on-one mentorship with personalised feedback to support your growth.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Group Learning</h4>
+          <p>Dedicated WhatsApp learning group for peer interaction, Q&amp;A, and shared resources.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- ─── Who Is This For — Two Panel ─────────────────── -->
+  <div class="audience-split">
+
+    <!-- Students -->
+    <div class="audience-panel panel-individual">
+      <p class="panel-eyebrow">For Students &amp; Beginners</p>
+      <h2>Build Your Foundations</h2>
+      <ul class="panel-questions">
+        <li>No prior experience needed — we start from the basics</li>
+        <li>Real case exposure beyond the classroom and textbooks</li>
+        <li>Develop therapeutic communication and active listening skills</li>
+        <li>One-on-one mentorship from an experienced practitioner</li>
+        <li>Earn a certificate in Counselling Psychology on completion</li>
+      </ul>
+      <a href="#apply" class="btn btn-panel">Apply as a Student &rarr;</a>
+    </div>
+
+    <!-- Professionals -->
+    <div class="audience-panel panel-corporate">
+      <p class="panel-eyebrow">For Working Professionals</p>
+      <h2>Apply Psychology at Work</h2>
+      <ul class="panel-questions">
+        <li>Apply psychology principles in real workplace settings</li>
+        <li>Understand employee behaviour, motivation, and group dynamics</li>
+        <li>Support workplace well-being and productivity initiatives</li>
+        <li>Gain structured corporate psychology experience</li>
+        <li>Earn a certificate in Organisational Psychology on completion</li>
+      </ul>
+      <a href="#apply" class="btn btn-panel">Apply as a Professional &rarr;</a>
+    </div>
+
+  </div>
 
   <!-- ─── What You Will Learn ───────────────────────────── -->
   <section class="section-wrap bg-cream">
@@ -341,38 +392,6 @@
     </div>
   </section>
 
-  <!-- ─── How It Works ──────────────────────────────────── -->
-  <section class="section-wrap bg-gray">
-    <div class="container">
-      <div class="section-header">
-        <h2>How It Works</h2>
-        <p>A structured, guided psychology internship experience — from your first session to certification.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h4>Weekly Sessions</h4>
-          <p>Structured sessions conducted 5 days a week with guided curriculum and live discussions.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h4>Case Discussions</h4>
-          <p>After every session, engage in real case-based learning to sharpen your applied thinking.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h4>Mentorship & Feedback</h4>
-          <p>Continuous one-on-one mentorship with personalised feedback to support your growth.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <h4>Group Learning</h4>
-          <p>Dedicated WhatsApp learning group for peer interaction, Q&amp;A, and shared resources.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ─── Apply Form ─────────────────────────────────────── -->
   <section class="section-wrap bg-cream" id="apply">
     <div class="container">
@@ -384,8 +403,8 @@
         <form>
           <div class="form-grid">
             <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" placeholder="Your full name" />
+              <label for="name">Full Name <span style="color: var(--teal);">*</span></label>
+              <input type="text" id="name" placeholder="Your full name" required />
             </div>
             <div class="form-group">
               <label for="email">Email Address</label>
@@ -394,8 +413,8 @@
           </div>
           <div class="form-grid">
             <div class="form-group">
-              <label for="university">University / Organisation</label>
-              <input type="text" id="university" placeholder="Where you study or work" />
+              <label for="phone">Phone Number <span style="color: var(--teal);">*</span></label>
+              <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required />
             </div>
             <div class="form-group">
               <label for="track">Programme Track</label>
