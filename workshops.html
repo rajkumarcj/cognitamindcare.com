@@ -60,6 +60,14 @@
     .btn-primary:hover { background: var(--teal-light); border-color: var(--teal-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45,110,97,.3); }
     .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
     .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+    .services-cta { background: linear-gradient(135deg, var(--teal-dark) 0%, #1e5e5a 100%); padding: 6rem 3rem; text-align: center; color: #fff; }
+    .services-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; color: #fff; }
+    .services-cta p { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-light { background: #fff; color: var(--teal-dark); border-color: #fff; font-weight: 600; }
+    .btn-light:hover { background: var(--cream); border-color: var(--cream); }
+    .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
     .page-hero { padding: 9rem 3rem 5rem; background: var(--cream); text-align: center; }
     .page-hero-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; }
     .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 1.2rem; }
@@ -129,6 +137,7 @@
       .cards-grid-2 { grid-template-columns: 1fr; gap: 1rem; }
       .split { grid-template-columns: 1fr; gap: 2rem; }
       .split-image { height: 260px; }
+      .services-cta { padding: 4rem 1.5rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; padding: 0 0 2rem; }
       footer { padding: 3rem 1.5rem 1.5rem; }
     }
@@ -255,18 +264,14 @@
     </div>
   </section>
 
-  <!-- CTA Split -->
-  <section class="section-wrap bg-cream">
-    <div class="container">
-      <div class="split">
-        <div class="split-content">
-          <h2>Bring a Workshop to Your Team</h2>
-          <p>All workshops are customised to your industry, culture, and specific challenges. Get in touch to discuss your needs and receive a tailored proposal.</p>
-          <a href="contact.html" class="btn btn-primary">Request a Proposal &rarr;</a>
-        </div>
-        <div class="split-image">
-          <img src="teamphoto.jpeg" alt="Team workshop in session" />
-        </div>
+  <!-- CTA -->
+  <section class="services-cta">
+    <div style="max-width:640px; margin:0 auto; text-align:center;">
+      <h2>Ready to Work Together?</h2>
+      <p>Whether you're an individual seeking clarity or an organisation building a healthier culture, the first conversation is free.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-light">Book Your Free Session</a>
+        <a href="https://wa.me/918496979197?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services." target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>
       </div>
     </div>
   </section>

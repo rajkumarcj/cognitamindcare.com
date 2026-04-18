@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Code was edited while a preview server is running. If the change is observable in the browser preview (per <when_to_verify>), follow <verification_workflow>. Otherwise skip.' >&2"
+          }
+        ]
+      }
+    ]
+  }
+}
