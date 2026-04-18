@@ -400,7 +400,7 @@
         <p>Ready to go beyond theory? Apply for India's most practical online psychology internship — with real case exposure, mentorship, and a certificate on completion.</p>
       </div>
       <div style="max-width: 680px; margin: 0 auto; background: var(--card-bg); padding: 2.5rem; border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
-        <form>
+        <form id="internshipForm">
           <div class="form-grid">
             <div class="form-group">
               <label for="name">Full Name <span style="color: var(--teal);">*</span></label>
@@ -429,7 +429,13 @@
             <label for="motivation">Why do you want to join this programme?</label>
             <textarea id="motivation" placeholder="Tell us what motivates you and what you hope to gain..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding: 1rem;">Submit Application &rarr;</button>
+          <button type="submit" id="internshipSubmitBtn" class="btn btn-primary" style="width:100%; justify-content:center; padding: 1rem;">Submit Application &rarr;</button>
+          <div id="internshipSuccess" style="display:none; margin-top:1rem; padding:1rem; background:#e8f5f4; border-radius:9px; color:var(--teal-dark); font-size:0.9rem; text-align:center;">
+            ✅ Application submitted! We'll be in touch within 2 business days.
+          </div>
+          <div id="internshipError" style="display:none; margin-top:1rem; padding:1rem; background:#fdecea; border-radius:9px; color:#b00020; font-size:0.9rem; text-align:center;">
+            ⚠️ Something went wrong. Please try again or email us directly.
+          </div>
         </form>
       </div>
     </div>
@@ -465,6 +471,33 @@
   </footer>
 
   <script>
+    // Internship Form → Google Apps Script → Google Sheets
+    const INTERNSHIP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyFs8UBshFo8zt7YoQZsLeKjmkTpED07-NCscYRLBIpgqGBLGpbyYeH-YvO6IYYdMvk/exec';
+    document.getElementById('internshipForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('internshipSubmitBtn');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+      const params = new URLSearchParams({
+        name:       document.getElementById('name').value,
+        email:      document.getElementById('email').value,
+        phone:      document.getElementById('phone').value,
+        service:    document.getElementById('track').value,
+        message:    document.getElementById('motivation').value
+      });
+      fetch(INTERNSHIP_SCRIPT_URL, { method: 'POST', body: params, mode: 'no-cors' })
+        .then(() => {
+          document.getElementById('internshipSuccess').style.display = 'block';
+          document.getElementById('internshipError').style.display = 'none';
+          btn.textContent = 'Application Sent ✓';
+        })
+        .catch(() => {
+          document.getElementById('internshipError').style.display = 'block';
+          btn.textContent = 'Submit Application →';
+          btn.disabled = false;
+        });
+    });
+
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
