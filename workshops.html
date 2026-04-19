@@ -60,7 +60,7 @@
     .btn-primary:hover { background: var(--teal-light); border-color: var(--teal-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45,110,97,.3); }
     .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
     .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
-    .services-cta { background: linear-gradient(135deg, var(--teal-dark) 0%, #1e5e5a 100%); padding: 6rem 3rem; text-align: center; color: #fff; }
+    .services-cta { background: linear-gradient(135deg, var(--teal-dark) 0%, #1e5e5a 100%); padding: 4rem 3rem; text-align: center; color: #fff; }
     .services-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; color: #fff; }
     .services-cta p { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7; }
     .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
@@ -68,17 +68,18 @@
     .btn-light:hover { background: var(--cream); border-color: var(--cream); }
     .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
     .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
-    .page-hero { padding: 9rem 3rem 5rem; background: var(--cream); text-align: center; }
+    .page-hero { padding: 8rem 3rem 2.5rem; background: var(--cream); text-align: center; }
     .page-hero-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; }
     .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 1.2rem; }
     .page-hero h1 .accent { color: var(--teal); }
     .page-hero p { font-size: 1rem; color: var(--muted); max-width: 560px; margin: 0 auto 2rem; line-height: 1.75; }
-    .section-wrap { padding: 6rem 3rem; }
+    .section-wrap { padding: 4rem 3rem; }
     .container { max-width: 1160px; margin: 0 auto; }
     .section-header { text-align: center; margin-bottom: 3.25rem; }
     .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.6rem); font-weight: 700; margin-bottom: 0.8rem; }
     .section-header p { color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.65; font-size: 0.95rem; }
     .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .cards-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
     .cards-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
     .card { background: var(--card-bg); border-radius: var(--radius); padding: 2rem 1.75rem; transition: transform .28s ease, box-shadow .28s ease; }
     .card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
@@ -135,6 +136,7 @@
       .section-wrap { padding: 4rem 1.5rem; }
       .cards-grid { grid-template-columns: 1fr; gap: 1rem; }
       .cards-grid-2 { grid-template-columns: 1fr; gap: 1rem; }
+      .cards-grid-4 { grid-template-columns: 1fr; gap: 1rem; }
       .split { grid-template-columns: 1fr; gap: 2rem; }
       .split-image { height: 260px; }
       .services-cta { padding: 4rem 1.5rem; }
@@ -173,7 +175,7 @@
   </nav>
 
   <section class="page-hero">
-    <p class="page-hero-eyebrow">Group Learning</p>
+
     <h1>Workshops &amp; <span class="accent">Training</span></h1>
     <p>Interactive, evidence-based workshops designed to build resilient teams and emotionally intelligent leaders.</p>
   </section>
@@ -185,7 +187,7 @@
         <h2>Signature Workshops</h2>
         <p>Delivered in-person or virtually — customised for your team's unique context.</p>
       </div>
-      <div class="cards-grid">
+      <div class="cards-grid-4">
         <div class="card">
           <div class="card-icon">💪</div>
           <h3>Resilience Masterclass</h3>
@@ -202,6 +204,12 @@
           <div class="card-icon">&#10084;</div>
           <h3>Emotional Intelligence (EQ)</h3>
           <p>Help your team recognise, understand, and manage emotions — improving collaboration, decision-making, and leadership effectiveness.</p>
+          <a href="contact.html" class="card-link">Enquire &rarr;</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏆</div>
+          <h3>Leadership Development Workshop</h3>
+          <p>Equip your leaders with the emotional intelligence, decision-making skills, and adaptability to lead teams through change and uncertainty.</p>
           <a href="contact.html" class="card-link">Enquire &rarr;</a>
         </div>
       </div>
