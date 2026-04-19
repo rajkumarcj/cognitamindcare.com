@@ -740,7 +740,9 @@
       .hero { padding: 5.5rem 1.5rem 3rem; }
       .hero h1 { font-size: clamp(2.2rem, 9vw, 3.5rem); }
       .hero-desc, .hero-subdesc { max-width: 100%; }
-      .hero-actions { flex-direction: column; align-items: center; }
+      .hero-actions { flex-direction: row; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem; }
+      .hero-actions .btn, .hero-actions a { width: auto !important; font-size: 0.78rem; padding: 0.55rem 0.9rem; white-space: nowrap; }
+      .hero-actions .btn-primary { width: 100% !important; }
 
       .stats-bar { padding: 2rem 1.5rem; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -800,7 +802,7 @@
         <p class="hero-eyebrow">Lifestyle Coach &amp; Corporate Psychologist</p>
         <h1>Your Next Chapter Starts With<br><span class="accent">One Conversation.</span></h1>
         <p class="hero-subdesc">
-          Whether you're navigating personal challenges or leading an organisation —<br>evidence-based coaching gives you the clarity, confidence, and tools to move forward.
+          Whether you're navigating personal challenges or leading an organisation,<br>evidence-based coaching gives you the clarity, confidence, and tools to move forward.
         </p>
         <p style="font-size:0.95rem; line-height:1.75; color:var(--text); font-weight:500; max-width:560px; margin:0 auto 1.5rem;">
           Your first session is free. No pressure. Just a conversation.
