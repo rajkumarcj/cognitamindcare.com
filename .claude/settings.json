@@ -9,6 +9,19 @@
           }
         ]
       }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "async": true,
+            "statusMessage": "Opening desktop & mobile preview...",
+            "command": "f=$(jq -r '.tool_input.file_path // empty'); [[ \"$f\" == /Users/veroraj/Website/*.html ]] || exit 0; url=\"file://$f\"; open -a \"Google Chrome\" \"$url\"; \"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --user-data-dir=\"/tmp/chrome-mobile-preview\" --window-size=390,844 --user-agent=\"Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1\" \"$url\" 2>/dev/null &"
+          }
+        ]
+      }
     ]
   }
 }
