@@ -61,7 +61,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -79,7 +79,7 @@
       --border:     #D4CCC8;
       --radius:     14px;
     }
-    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
 
     /* ─── Nav ─────────────────────────────────────────── */
     nav { position: fixed; inset: 0 0 auto 0; z-index: 200; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 3rem; box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
@@ -159,7 +159,7 @@
     /* ─── Apply Form ──────────────────────────────────── */
     .form-group { margin-bottom: 1.25rem; }
     .form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.4rem; color: var(--text); }
-    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--border); border-radius: 9px; font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text); background: #fff; transition: border-color .2s; outline: none; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--border); border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); background: #fff; transition: border-color .2s; outline: none; }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--teal); }
     .form-group textarea { resize: vertical; min-height: 120px; }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
@@ -206,7 +206,7 @@
       .nav-links { display: none; }
       .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 1.5rem; gap: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
       .nav-hamburger { display: flex; }
-      .page-hero { padding: 7rem 1.5rem 4rem; }
+      .page-hero { padding: 7rem 1.5rem 3rem; }
       .page-hero .hero-subtitle { white-space: normal !important; max-width: 100% !important; }
       .audience-split { grid-template-columns: 1fr; }
       .audience-panel { padding: 3rem 1.5rem; }
@@ -264,8 +264,9 @@
       <li style="padding: 0.6rem 0; font-size: 1rem; color: var(--text); display: flex; align-items: center; gap: 0.75rem;"><span style="color: var(--teal); font-size: 1.2rem;">✦</span> <span><strong style="color: var(--teal-dark);">Organisational Psychology Internship</strong>, for working professionals</span></li>
     </ul>
 
-    <div style="margin-top: 1.5rem;">
+    <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
       <a href="#apply" class="btn btn-primary">Apply Now &rarr;</a>
+      <a href="https://wa.me/918496979197?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20your%20workshops." target="_blank" rel="noopener" class="btn btn-outline">Chat on WhatsApp</a>
     </div>
   </section>
 
@@ -504,8 +505,19 @@
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => { navbar.style.boxShadow = window.scrollY > 10 ? '0 2px 16px rgba(0,0,0,0.08)' : '0 1px 0 rgba(0,0,0,0.06)'; });
-    const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } }), { threshold: 0.1 });
-    document.querySelectorAll('.card, .learn-item, .step').forEach(el => { el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity .5s ease, transform .5s ease'; observer.observe(el); });
+    document.querySelectorAll('.cards-grid-2, .cards-grid-4, .learn-grid, .steps').forEach(grid => {
+      const items = Array.from(grid.children);
+      items.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(24px)'; el.style.transition='opacity .5s ease, transform .5s ease'; });
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            items.forEach((el, i) => setTimeout(() => { el.style.opacity='1'; el.style.transform='translateY(0)'; }, i * 90));
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      obs.observe(grid);
+    });
   </script>
 
 </body>

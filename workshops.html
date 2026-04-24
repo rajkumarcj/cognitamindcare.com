@@ -60,7 +60,7 @@
   <meta name="twitter:image" content="https://cognitamindcare.com/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -78,7 +78,7 @@
       --border:     #D4CCC8;
       --radius:     14px;
     }
-    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
     nav { position: fixed; inset: 0 0 auto 0; z-index: 200; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 3rem; box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
     .logo { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; line-height: 1.25; color: var(--teal); text-decoration: none; }
     .nav-links { list-style: none; display: flex; gap: 2.25rem; }
@@ -91,7 +91,7 @@
     .btn-primary:hover { background: var(--teal-light); border-color: var(--teal-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45,110,97,.3); }
     .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
     .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
-    .services-cta { background: linear-gradient(135deg, var(--teal-dark) 0%, #1e5e5a 100%); padding: 4rem 3rem; text-align: center; color: #fff; }
+    .services-cta { background: linear-gradient(135deg, var(--teal-dark) 0%, #1e5e5a 100%); padding: 6rem 3rem; text-align: center; color: #fff; }
     .services-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; color: #fff; }
     .services-cta p { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7; }
     .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
@@ -99,7 +99,7 @@
     .btn-light:hover { background: var(--cream); border-color: var(--cream); }
     .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
     .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
-    .page-hero { padding: 8rem 3rem 3rem; background: var(--cream); text-align: center; }
+    .page-hero { padding: 9rem 3rem 3rem; background: var(--cream); text-align: center; }
     .page-hero-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; }
     .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 1.2rem; }
     .page-hero h1 .accent { color: var(--teal); }
@@ -136,7 +136,7 @@
     .author-role { color: var(--muted); font-size: 0.82rem; }
     .form-group { margin-bottom: 1.25rem; }
     .form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.4rem; color: var(--text); }
-    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--border); border-radius: 9px; font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text); background: #fff; transition: border-color .2s; outline: none; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--border); border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); background: #fff; transition: border-color .2s; outline: none; }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--teal); }
     .form-group textarea { resize: vertical; min-height: 130px; }
     .blog-card { background: var(--card-bg); border-radius: var(--radius); overflow: hidden; transition: transform .28s ease, box-shadow .28s ease; }
@@ -363,13 +363,27 @@
     window.addEventListener('scroll', () => {
       navbar.style.boxShadow = window.scrollY > 10 ? '0 2px 16px rgba(0,0,0,0.08)' : '0 1px 0 rgba(0,0,0,0.06)';
     });
-    document.querySelectorAll('.card, .testimonial-card, .split-content, .split-image, .blog-card').forEach(el => {
+    document.querySelectorAll('.cards-grid, .cards-grid-2, .cards-grid-4').forEach(grid => {
+      const items = Array.from(grid.children);
+      items.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(28px)'; el.style.transition='opacity .5s ease, transform .5s ease'; });
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            items.forEach((el, i) => setTimeout(() => { el.style.opacity='1'; el.style.transform='translateY(0)'; }, i * 90));
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      obs.observe(grid);
+    });
+    document.querySelectorAll('.split-content, .split-image, .blog-card').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(24px)';
       el.style.transition = 'opacity .55s ease, transform .55s ease';
-      new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
-      }, { threshold: 0.1 }).observe(el);
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; obs.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      obs.observe(el);
     });
   </script>
 
