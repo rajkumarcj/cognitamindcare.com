@@ -91,8 +91,10 @@
     .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
     /* ─── About Hero (split) ─────────────────────────── */
     .about-hero {
-      background: var(--cream);
-      padding: 7rem 3rem 3rem;
+      background: radial-gradient(ellipse at 80% 20%, rgba(58,171,160,0.11) 0%, transparent 55%),
+                  radial-gradient(ellipse at 10% 80%, rgba(196,168,176,0.11) 0%, transparent 50%),
+                  var(--cream);
+      padding: 7rem 3rem 5rem;
     }
     .about-hero-inner {
       max-width: 1160px;
@@ -124,9 +126,27 @@
       font-size: 0.97rem;
       color: var(--muted);
       line-height: 1.8;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.75rem;
     }
-    .about-hero-bio p:last-of-type { margin-bottom: 2rem; }
+    .about-hero-bio ul {
+      list-style: none;
+      margin: 0 0 1.2rem 0;
+      padding: 0;
+    }
+    .about-hero-bio ul li {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+      padding: 0.25rem 0 0.25rem 1.4rem;
+      position: relative;
+    }
+    .about-hero-bio ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 600;
+    }
     .about-hero-bio em { color: var(--text); font-style: italic; }
     .about-hero-photo {
       border-radius: var(--radius);
@@ -219,6 +239,117 @@
     .achievement-text strong { font-size: 0.97rem; font-weight: 600; color: var(--text); }
     .achievement-text span { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
 
+    /* ─── About Company ─────────────────────────────── */
+    .about-company {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about-company-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .about-company-eyebrow::before,
+    .about-company-eyebrow::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--teal);
+      opacity: 0.45;
+    }
+    .about-company h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+    .about-company p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      font-size: 0.97rem;
+    }
+
+    /* ─── Pull Quote ─────────────────────────────────── */
+    .pull-quote-section {
+      background: var(--teal-dark);
+      padding: 5rem 3rem;
+    }
+    .pull-quote-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pull-quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem;
+      line-height: 0.6;
+      color: var(--teal-light);
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+    .pull-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 400;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+    .pull-quote-attr {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal-light);
+      opacity: 0.8;
+    }
+
+    /* ─── Credentials Grid ───────────────────────────── */
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .credential-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      border-left: 3px solid var(--teal);
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    .credential-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+    }
+    .credential-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+    .credential-card strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .credential-card span {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
     /* ─── About CTA ──────────────────────────────────── */
     .about-cta {
       background: linear-gradient(135deg, var(--teal-dark) 0%, #1e5e5a 100%);
@@ -275,7 +406,9 @@
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; padding: 0 0 2rem; }
       footer { padding: 3rem 1.5rem 1.5rem; }
       .about-cta { padding: 4rem 1.5rem; }
-      .achievement-item { padding: 1.1rem 1.25rem; }
+      .credentials-grid { grid-template-columns: 1fr; }
+      .pull-quote-section { padding: 4rem 1.5rem; }
+      .pull-quote-mark { font-size: 4rem; }
       .about-hero { padding: 6rem 1.5rem 3rem; }
       .about-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-hero-photo { height: 320px; order: -1; }
@@ -320,9 +453,20 @@
         <p class="about-hero-eyebrow">Meet Veroanica</p>
         <h1>The Person Behind<br><span class="accent">the Practice.</span></h1>
         <div class="about-hero-bio">
-          <p>I started this work because I kept meeting people who were highly capable but quietly struggling: executives burning out, students losing confidence, teams that had stopped trusting each other.</p>
-          <p>Psychology gave me the language. Coaching gave me the tools. And 10+ years of working with real people in real situations gave me the one thing no degree can teach: knowing when to listen, and when to challenge.</p>
-          <p>I hold a Master's in Psychology with advanced training in counselling and guidance, but what I bring to every session isn't just a framework. It's genuine curiosity about what's holding you back, and a real commitment to helping you move forward.</p>
+          <p>With expertise in Psychology and extensive experience in corporate environments, I bring a unique perspective that bridges personal challenges with real-world demands.</p>
+          <p>I work with individuals navigating:</p>
+          <ul>
+            <li>Anxiety and overthinking</li>
+            <li>Career uncertainty</li>
+            <li>Relationship challenges</li>
+          </ul>
+          <p>And with organizations aiming to:</p>
+          <ul>
+            <li>Build resilient teams</li>
+            <li>Strengthen leadership</li>
+            <li>Improve performance</li>
+          </ul>
+          <p><em>The goal is not just insight — but real, lasting change.</em></p>
           <a href="contact.html" class="btn btn-primary">Work With Me &rarr;</a>
         </div>
       </div>
@@ -335,15 +479,15 @@
   <!-- About the Company -->
   <section class="section-wrap bg-blue">
     <div class="container">
-      <div class="split-content">
-        <p class="about-hero-eyebrow">About Cognita Mindcare</p>
+      <div class="about-company">
+        <p class="about-company-eyebrow">About Cognita Mindcare</p>
         <h2>Founded on <span class="accent">One Belief.</span></h2>
-        <p>Cognita Mindcare was founded on a single belief: psychological well-being is the foundation of both personal fulfilment and organisational success. We blend evidence-based psychology with practical, human-centred coaching, working with individuals and organisations across the globe, entirely remotely, to create change that lasts.</p>
-        <p>Over 10 years of practice, 200+ sessions conducted across the globe.</p>
+        <p>Cognita Mindcare was founded on a single belief: psychological well-being is the foundation of both personal fulfilment and organisational success. We blend evidence-based psychology with practical, human-centred coaching, working with individuals and organisations across India to create change that lasts.</p>
         <a href="contact.html" class="btn btn-primary">Work With Us &rarr;</a>
       </div>
     </div>
   </section>
+
 
   <!-- Core Values -->
   <section class="section-wrap bg-gray">
@@ -383,34 +527,26 @@
       <div class="section-header">
         <h2>Credentials &amp; Experience</h2>
       </div>
-      <div class="achievements-strip">
-        <div class="achievement-item">
-          <div class="achievement-icon">🎓</div>
-          <div class="achievement-text">
-            <strong>Master's in Psychology</strong>
-            <span>Human behaviour, emotional well-being &amp; psychological growth</span>
-          </div>
+      <div class="credentials-grid">
+        <div class="credential-card">
+          <div class="credential-icon">🎓</div>
+          <strong>Master's in Psychology</strong>
+          <span>Human behaviour, emotional well-being &amp; psychological growth</span>
         </div>
-        <div class="achievement-item">
-          <div class="achievement-icon">📜</div>
-          <div class="achievement-text">
-            <strong>Counselling &amp; Guidance</strong>
-            <span>Advanced training across individual and group settings</span>
-          </div>
+        <div class="credential-card">
+          <div class="credential-icon">📜</div>
+          <strong>Counselling &amp; Guidance</strong>
+          <span>Advanced training across individual and group settings</span>
         </div>
-        <div class="achievement-item">
-          <div class="achievement-icon">💼</div>
-          <div class="achievement-text">
-            <strong>10+ Years in Corporate</strong>
-            <span>IT and corporate sectors, navigating complexity and performance</span>
-          </div>
+        <div class="credential-card">
+          <div class="credential-icon">💼</div>
+          <strong>10+ Years in Corporate</strong>
+          <span>IT and corporate sectors, navigating complexity and performance</span>
         </div>
-        <div class="achievement-item">
-          <div class="achievement-icon">🏛️</div>
-          <div class="achievement-text">
-            <strong>Educational Institutions</strong>
-            <span>Building psychologically safe environments for students &amp; faculty</span>
-          </div>
+        <div class="credential-card">
+          <div class="credential-icon">🏛️</div>
+          <strong>Educational Institutions</strong>
+          <span>Building psychologically safe environments for students &amp; faculty</span>
         </div>
       </div>
     </div>
