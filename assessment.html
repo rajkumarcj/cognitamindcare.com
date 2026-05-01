@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <title>Mental Wellness Self-Assessment | Cognita Mindcare</title>
+  <meta name="description" content="Take our free 15-question self-assessment to understand your mental and emotional well-being. Get personalized insights from Cognita Mindcare." />
+  <meta name="keywords" content="mental wellness assessment, self-assessment mental health, emotional well-being quiz, Cognita Mindcare assessment, free mental health check" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cognitamindcare.com/assessment.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cognitamindcare.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Self-Assessment", "item": "https://cognitamindcare.com/assessment.html" }
+    ]
+  }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cognitamindcare.com/assessment.html" />
+  <meta property="og:title" content="Mental Wellness Self-Assessment | Cognita Mindcare" />
+  <meta property="og:description" content="Take our free 15-question self-assessment to understand your mental and emotional well-being." />
+  <meta property="og:image" content="https://cognitamindcare.com/logo.png" />
+  <meta property="og:site_name" content="Cognita Mindcare" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mental Wellness Self-Assessment | Cognita Mindcare" />
+  <meta name="twitter:description" content="Take our free 15-question self-assessment to understand your mental and emotional well-being." />
+  <meta name="twitter:image" content="https://cognitamindcare.com/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --teal:       #3AABA0;
+      --teal-dark:  #2A7A76;
+      --teal-light: #7BCBC5;
+      --rose:       #C4A8B0;
+      --cream:      #F5F4F4;
+      --blue-gray:  #EEF0EF;
+      --gray-bg:    #EDEAE8;
+      --card-bg:    #FFFFFF;
+      --text:       #3A3A3A;
+      --muted:      #7A7A7A;
+      --border:     #D4CCC8;
+      --radius:     14px;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+    nav { position: fixed; inset: 0 0 auto 0; z-index: 200; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 3rem; box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
+    .logo { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; line-height: 1.25; color: var(--teal); text-decoration: none; }
+    .nav-links { list-style: none; display: flex; gap: 2.25rem; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all .3s; }
+    .btn { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.85rem 1.75rem; border-radius: 9px; font-size: 0.9rem; font-weight: 500; text-decoration: none; transition: all .22s ease; cursor: pointer; border: 1.5px solid transparent; font-family: 'DM Sans', sans-serif; }
+    .btn-primary { background: var(--teal); color: #fff; border-color: var(--teal); }
+    .btn-primary:hover { background: var(--teal-light); border-color: var(--teal-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45,110,97,.3); }
+    .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+    .btn-light { background: #fff; color: var(--teal-dark); border-color: #fff; font-weight: 600; }
+    .btn-light:hover { background: var(--cream); border-color: var(--cream); }
+    .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+    .page-hero { padding: 9rem 3rem 2rem; background: var(--cream); text-align: center; }
+    .page-hero-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 1.2rem; }
+    .page-hero h1 .accent { color: var(--teal); }
+    .page-hero p { font-size: 1rem; color: var(--muted); max-width: 560px; margin: 0 auto; line-height: 1.75; }
+    .section-wrap { padding: 2rem 3rem 4rem; }
+    .container { max-width: 720px; margin: 0 auto; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.4rem; color: var(--text); }
+    .form-group input { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--border); border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); background: #fff; transition: border-color .2s; outline: none; }
+    .form-group input:focus { border-color: var(--teal); }
+    .services-cta { background: linear-gradient(135deg, var(--teal-dark) 0%, #1e5e5a 100%); padding: 2.5rem 3rem; text-align: center; color: #fff; }
+    .services-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 700; margin-bottom: 0.6rem; color: #fff; }
+    .services-cta p { font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.65; }
+    .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .contact-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 0.75rem; line-height: 1.5; }
+    .footer-social { display: flex; gap: 0.75rem; margin-top: 1.25rem; }
+    .social-icon { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.65); text-decoration: none; transition: background .2s, color .2s; }
+    .social-icon:hover { background: var(--teal); color: #fff; }
+    footer { background: var(--teal-dark); color: rgba(255,255,255,.75); padding: 4rem 3rem 2rem; }
+    .footer-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1.4fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.1); margin-bottom: 1.75rem; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--teal-light); line-height: 1.3; margin-bottom: 1rem; }
+    .footer-desc { font-size: 0.88rem; line-height: 1.65; }
+    .footer-col h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a { color: rgba(255,255,255,.65); text-decoration: none; font-size: 0.88rem; transition: color .2s; }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-bottom { max-width: 1160px; margin: 0 auto; text-align: center; font-size: 0.82rem; color: rgba(255,255,255,.35); }
+
+    /* ── Wizard ── */
+    .wizard-step { display: none; }
+    .wizard-step.active { display: block; }
+
+    /* Step 1 card */
+    .wizard-card { background: var(--card-bg); border-radius: var(--radius); padding: 2.5rem; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .wizard-card h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 0.5rem; }
+    .wizard-card .sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.75rem; line-height: 1.6; }
+
+    /* Progress */
+    .progress-wrap { margin-bottom: 2rem; }
+    .progress-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+    .progress-label { font-size: 0.82rem; font-weight: 600; color: var(--muted); }
+    .progress-score { font-size: 0.82rem; color: var(--muted); }
+    .progress-score strong { color: var(--teal); font-size: 1rem; }
+    .progress-track { width: 100%; height: 6px; background: var(--border); border-radius: 99px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--teal); border-radius: 99px; transition: width 0.35s ease; }
+
+    /* Question */
+    .question-box { background: linear-gradient(135deg, #e8f5f4 0%, #f0faf9 100%); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 1.5rem 1.5rem 1.5rem 1.25rem; margin-bottom: 1.75rem; }
+    .question-num-badge { display: inline-block; background: var(--teal); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.7rem; border-radius: 99px; margin-bottom: 0.75rem; }
+    .question-text { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--teal-dark); line-height: 1.45; margin: 0; }
+    .question-hint { display: none; }
+    .pills-wrap { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+    .pill-btn {
+      padding: 0.6rem 1.1rem;
+      border: 2px solid var(--rose);
+      border-radius: 24px;
+      background: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .pill-btn:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
+    .pill-btn.selected { background: var(--teal); border-color: var(--teal); color: #fff; }
+    .q-nav { display: flex; align-items: center; justify-content: space-between; }
+    .back-btn { background: none; border: 1.5px solid var(--border); border-radius: 9px; padding: 0.55rem 1.1rem; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--muted); cursor: pointer; transition: border-color .2s, color .2s; }
+    .back-btn:hover { border-color: var(--teal); color: var(--teal); }
+    .back-btn:disabled { opacity: 0; pointer-events: none; }
+
+    /* Result card */
+    .result-card { border-radius: var(--radius); padding: 2rem; margin-bottom: 1.5rem; text-align: center; }
+    .result-card.band-well { background: #e8f5f4; border: 1.5px solid var(--teal-light); }
+    .result-card.band-strain { background: #f0f8f7; border: 1.5px solid var(--teal); }
+    .result-card.band-elevated { background: #fdf5f7; border: 1.5px solid var(--rose); }
+    .result-card.band-support { background: #f9eef1; border: 1.5px solid #b08090; }
+    .result-badge { display: inline-block; padding: 0.35rem 1rem; border-radius: 99px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.85rem; }
+    .band-well .result-badge { background: var(--teal); color: #fff; }
+    .band-strain .result-badge { background: var(--teal-dark); color: #fff; }
+    .band-elevated .result-badge { background: var(--rose); color: #fff; }
+    .band-support .result-badge { background: #9a6070; color: #fff; }
+    .result-score { font-size: 2.5rem; font-weight: 800; color: var(--teal-dark); line-height: 1; margin-bottom: 0.25rem; }
+    .band-elevated .result-score, .band-support .result-score { color: #9a6070; }
+    .result-score-label { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.25rem; }
+    .result-helps-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+    .result-helps-text { font-size: 1rem; color: var(--text); line-height: 1.6; font-style: italic; }
+
+    /* Confirmation */
+    .confirm-msg { background: #e8f5f4; border: 1.5px solid var(--teal-light); border-radius: var(--radius); padding: 1.5rem; text-align: center; }
+    .confirm-msg p { color: var(--teal-dark); font-size: 0.95rem; line-height: 1.7; }
+    .error-msg { background: #fdf0f0; border: 1.5px solid #e0b0b0; border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+    .error-msg p { color: #c0392b; font-size: 0.9rem; line-height: 1.6; }
+
+    /* Instruction banner */
+    .rate-note { background: var(--blue-gray); border-radius: 9px; padding: 0.85rem 1.25rem; margin-bottom: 2rem; font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+    .rate-note strong { color: var(--text); display: block; margin-bottom: 0.3rem; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 1.5rem; gap: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+      .nav-hamburger { display: flex; }
+      .page-hero { padding: 7rem 1.5rem 1rem; }
+      .section-wrap { padding: 2rem 1.5rem 4rem; }
+      .services-cta { padding: 4rem 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; padding: 0 0 2rem; }
+      footer { padding: 3rem 1.5rem 1.5rem; }
+      .wizard-card { padding: 1.75rem 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .pills-wrap { gap: 0.5rem; }
+      .pill-btn { font-size: 0.82rem; padding: 0.55rem 0.9rem; }
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KKZ5DDM8S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8KKZ5DDM8S');
+  </script>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="logo"><img src="logo.png" alt="Cognita Mindcare" height="64"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="assessment.html" class="active">Assessment</a></li>
+      <li><a href="internships.html">Internships</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section class="page-hero">
+    <p class="page-hero-eyebrow">Self-Assessment</p>
+    <h1>Know Where You <span class="accent">Stand</span></h1>
+    <p>A free 15-question check-in to help you understand your mental and emotional well-being right now.</p>
+  </section>
+
+  <section class="section-wrap bg-cream">
+    <div class="container">
+
+      <!-- ── STEP 1: Basic Details ── -->
+      <div id="step-1" class="wizard-step active">
+        <div class="wizard-card">
+          <h2>Let's start with a few details</h2>
+          <p class="sub">Your responses are private. Email is needed only to send you your results.</p>
+
+          <div class="form-group">
+            <label for="s1-name">Name <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
+            <input type="text" id="s1-name" placeholder="Your name" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="s1-email">Email Address <span style="color:var(--teal);">*</span></label>
+            <input type="email" id="s1-email" placeholder="your@email.com" autocomplete="email" />
+            <div id="email-error" style="display:none;color:#c0392b;font-size:0.82rem;margin-top:0.4rem;">Please enter a valid email address.</div>
+          </div>
+          <div class="form-group" style="margin-bottom:2rem;">
+            <label for="s1-phone">Phone Number <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
+            <input type="tel" id="s1-phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" />
+          </div>
+
+          <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="startAssessment()">
+            Start Assessment &rarr;
+          </button>
+        </div>
+      </div>
+
+      <!-- ── STEP 2: Questions ── -->
+      <div id="step-2" class="wizard-step">
+        <div class="wizard-card">
+
+          <div class="progress-wrap">
+            <div class="progress-meta">
+              <span class="progress-label">Question <span id="q-num">1</span> of 15</span>
+              <span class="progress-score">Score so far: <strong id="live-score">0</strong><span style="color:var(--muted);font-size:0.78rem;">/60</span></span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+            </div>
+          </div>
+
+          <div class="rate-note">
+            <strong>Rate how often you've experienced this recently:</strong>
+            0 = Not at all &nbsp;·&nbsp; 1 = Rarely &nbsp;·&nbsp; 2 = Sometimes &nbsp;·&nbsp; 3 = Often &nbsp;·&nbsp; 4 = Almost always
+          </div>
+
+          <div class="question-box">
+            <span class="question-num-badge" id="question-num-hint"></span>
+            <p class="question-text" id="question-text"></p>
+          </div>
+
+          <div class="pills-wrap" id="pills-wrap">
+            <button class="pill-btn" data-val="0" onclick="selectAnswer(0)">Not at all</button>
+            <button class="pill-btn" data-val="1" onclick="selectAnswer(1)">Rarely</button>
+            <button class="pill-btn" data-val="2" onclick="selectAnswer(2)">Sometimes</button>
+            <button class="pill-btn" data-val="3" onclick="selectAnswer(3)">Often</button>
+            <button class="pill-btn" data-val="4" onclick="selectAnswer(4)">Almost always</button>
+          </div>
+
+          <div class="q-nav">
+            <button class="back-btn" id="back-btn" onclick="goBack()">← Back</button>
+            <span style="font-size:0.8rem;color:var(--muted);">Select an option to continue</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── STEP 3: Results + Submit ── -->
+      <div id="step-3" class="wizard-step">
+        <div class="wizard-card">
+
+          <h2 style="text-align:center;margin-bottom:0.4rem;">Your Results</h2>
+          <p class="sub" style="text-align:center;">Based on your 15 responses</p>
+
+          <div id="result-card" class="result-card"></div>
+
+          <div id="submit-section">
+            <p style="font-size:0.88rem;color:var(--muted);text-align:center;margin-bottom:1.25rem;line-height:1.6;">
+              Submit to send your results to Cognita Mindcare. We'll personally review and share insights with you.
+            </p>
+            <button class="btn btn-primary" id="submit-btn" style="width:100%;justify-content:center;margin-bottom:0.85rem;" onclick="submitAssessment()">
+              Submit &amp; Book a Free Session &rarr;
+            </button>
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.85rem;">
+              <div style="flex:1;height:1px;background:var(--border);"></div>
+              <span style="font-size:0.78rem;color:var(--muted);white-space:nowrap;">or</span>
+              <div style="flex:1;height:1px;background:var(--border);"></div>
+            </div>
+            <a href="https://wa.me/918496979197?text=Hi%2C%20I%20just%20completed%20the%20self-assessment%20and%20would%20like%20to%20speak%20directly." target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.6rem;width:100%;padding:0.85rem 1.75rem;border-radius:9px;border:1.5px solid #25D366;background:#fff;color:#128C7E;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;text-decoration:none;transition:background .2s,color .2s;" onmouseover="this.style.background='#25D366';this.style.color='#fff';" onmouseout="this.style.background='#fff';this.style.color='#128C7E';">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              If you'd like to speak directly, reach out on WhatsApp
+            </a>
+          </div>
+
+          <div id="success-msg" class="confirm-msg" style="display:none;margin-top:1.5rem;">
+            <p style="margin-bottom:1.25rem;">
+              <strong style="display:block;margin-bottom:0.5rem;font-size:1rem;">Thank you for completing this.</strong>
+              Based on your responses, I'll personally review and share insights with you shortly.
+            </p>
+            <a href="https://wa.me/918496979197?text=Hi%2C%20I%20just%20completed%20the%20self-assessment%20and%20would%20like%20to%20speak%20directly." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.7rem 1.4rem;border-radius:9px;background:#25D366;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;text-decoration:none;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Reach out on WhatsApp
+            </a>
+          </div>
+
+          <div id="error-msg" class="error-msg" style="display:none;margin-top:1.5rem;">
+            <p>
+              Something went wrong. Please try again or reach out directly via
+              <a href="https://wa.me/918496979197" target="_blank" rel="noopener" style="color:#c0392b;font-weight:600;">WhatsApp</a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="services-cta">
+    <div style="max-width:640px; margin:0 auto; text-align:center;">
+      <h2>Ready to Talk?</h2>
+      <p>Your first session is free, 30 minutes, and completely pressure-free.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-light">Book Your Free Session</a>
+        <a href="https://wa.me/918496979197?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services." target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Cognita Mindcare</div>
+        <p class="footer-desc">Empowering individuals and organizations through evidence-based psychology and transformative coaching.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/cognita-mindcare/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/cognitamindcare/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+          <li><a href="assessment.html">Assessment</a></li>
+          <li><a href="internships.html">Internships</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <div class="contact-item"><span style="font-size:1rem;">✉</span><a href="mailto:cognitamindcare@gmail.com" style="color:inherit;text-decoration:none;">cognitamindcare@gmail.com</a></div>
+        <div class="contact-item"><span style="font-size:1rem;">&#9742;</span><a href="tel:+918496979197" style="color:inherit;text-decoration:none;">+91 84969 79197</a></div>
+        <div class="contact-item"><span style="font-size:1rem;">&#128232;</span><a href="https://wa.me/918496979197" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">WhatsApp Us</a></div>
+        <div class="contact-item"><span style="font-size:1rem;">&#9711;</span><span>Kannuru Rd, Bengaluru, Karnataka, 560064</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Cognita Mindcare. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyFs8UBshFo8zt7YoQZsLeKjmkTpED07-NCscYRLBIpgqGBLGpbyYeH-YvO6IYYdMvk/exec';
+
+    const questions = [
+      'I feel overwhelmed by my thoughts or responsibilities',
+      'I find it difficult to relax or switch off',
+      'I feel anxious without a clear reason',
+      'I overthink situations or conversations frequently',
+      'I feel mentally or emotionally exhausted',
+      'I struggle to stay focused on tasks',
+      'I feel low on motivation or interest in daily activities',
+      'I feel confused or stuck about my career or life direction',
+      'I struggle to make decisions about important areas of my life',
+      'I find it difficult to communicate my thoughts or feelings',
+      'I experience frequent misunderstandings or conflicts in relationships',
+      'I feel unheard or unsupported by people around me',
+      'I often feel self-doubt or lack confidence',
+      'I feel disconnected from myself or unsure about what I want',
+      'I feel like I need support but I\'m unsure where to start'
+    ];
+
+    const answers = new Array(15).fill(null);
+    let currentQ = 0;
+    let userData = {};
+    let advanceTimer = null;
+
+    function showStep(n) {
+      document.querySelectorAll('.wizard-step').forEach(el => el.classList.remove('active'));
+      document.getElementById('step-' + n).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function startAssessment() {
+      const email = document.getElementById('s1-email').value.trim();
+      const emailErr = document.getElementById('email-error');
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailErr.style.display = 'block';
+        document.getElementById('s1-email').focus();
+        return;
+      }
+      emailErr.style.display = 'none';
+      userData = {
+        name:  document.getElementById('s1-name').value.trim(),
+        email: email,
+        phone: document.getElementById('s1-phone').value.trim()
+      };
+      currentQ = 0;
+      answers.fill(null);
+      renderQuestion(0);
+      showStep(2);
+    }
+
+    function renderQuestion(i) {
+      document.getElementById('q-num').textContent = i + 1;
+      document.getElementById('question-text').textContent = questions[i];
+      document.getElementById('question-num-hint').textContent = 'Question ' + (i + 1) + ' of ' + questions.length;
+
+      const pct = Math.round((i / questions.length) * 100);
+      document.getElementById('progress-fill').style.width = pct + '%';
+
+      const answered = answers.filter(a => a !== null);
+      const score = answered.reduce((s, a) => s + a, 0);
+      document.getElementById('live-score').textContent = score;
+
+      const pills = document.querySelectorAll('.pill-btn');
+      pills.forEach(p => {
+        p.classList.remove('selected');
+        p.disabled = false;
+      });
+      if (answers[i] !== null) {
+        pills[answers[i]].classList.add('selected');
+      }
+
+      document.getElementById('back-btn').disabled = (i === 0);
+    }
+
+    function selectAnswer(val) {
+      if (advanceTimer) clearTimeout(advanceTimer);
+
+      answers[currentQ] = val;
+
+      const pills = document.querySelectorAll('.pill-btn');
+      pills.forEach(p => p.classList.remove('selected'));
+      pills[val].classList.add('selected');
+
+      const score = answers.filter(a => a !== null).reduce((s, a) => s + a, 0);
+      document.getElementById('live-score').textContent = score;
+
+      advanceTimer = setTimeout(() => {
+        if (currentQ < questions.length - 1) {
+          currentQ++;
+          renderQuestion(currentQ);
+        } else {
+          showResults();
+        }
+      }, 400);
+    }
+
+    function goBack() {
+      if (advanceTimer) clearTimeout(advanceTimer);
+      if (currentQ > 0) {
+        currentQ--;
+        renderQuestion(currentQ);
+      }
+    }
+
+    function getBand(score) {
+      if (score <= 15) return {
+        cls: 'band-well',
+        label: 'Doing Well',
+        helps: 'Building resilience, sharpening clarity, preventive mental fitness'
+      };
+      if (score <= 30) return {
+        cls: 'band-strain',
+        label: 'Some Strain',
+        helps: 'Managing stress, improving focus, navigating relationship patterns'
+      };
+      if (score <= 45) return {
+        cls: 'band-elevated',
+        label: 'Elevated',
+        helps: 'Regaining balance, finding direction, rebuilding confidence'
+      };
+      return {
+        cls: 'band-support',
+        label: 'Needs Support',
+        helps: 'Structured support across emotional well-being, clarity, and relationships'
+      };
+    }
+
+    function showResults() {
+      const total = answers.reduce((s, a) => s + (a || 0), 0);
+      const band = getBand(total);
+      const card = document.getElementById('result-card');
+      card.className = 'result-card ' + band.cls;
+      card.innerHTML =
+        '<span class="result-badge">' + band.label + '</span>' +
+        '<div class="result-score">' + total + '</div>' +
+        '<div class="result-score-label">out of 60</div>' +
+        '<div class="result-helps-label">We can help you with</div>' +
+        '<div class="result-helps-text">' + band.helps + '</div>';
+
+      document.getElementById('submit-section').style.display = 'block';
+      document.getElementById('success-msg').style.display = 'none';
+      document.getElementById('error-msg').style.display = 'none';
+      showStep(3);
+    }
+
+    function submitAssessment() {
+      const total = answers.reduce((s, a) => s + (a || 0), 0);
+      const band = getBand(total);
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      const params = new URLSearchParams({
+        form_type: 'assessment',
+        name:  userData.name,
+        email: userData.email,
+        phone: userData.phone,
+        score: total,
+        band:  band.label
+      });
+
+      fetch(SCRIPT_URL, { method: 'POST', body: params, mode: 'no-cors' })
+        .then(() => {
+          document.getElementById('submit-section').style.display = 'none';
+          document.getElementById('success-msg').style.display = 'block';
+          document.getElementById('error-msg').style.display = 'none';
+        })
+        .catch(() => {
+          document.getElementById('error-msg').style.display = 'block';
+          btn.textContent = 'Submit & Book a Free Session →';
+          btn.disabled = false;
+        });
+    }
+
+    // Nav
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.style.boxShadow = window.scrollY > 10 ? '0 2px 16px rgba(0,0,0,0.08)' : '0 1px 0 rgba(0,0,0,0.06)';
+    });
+  </script>
+
+</body>
+</html>
