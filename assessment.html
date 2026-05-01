@@ -405,7 +405,7 @@
   </footer>
 
   <script>
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyFs8UBshFo8zt7YoQZsLeKjmkTpED07-NCscYRLBIpgqGBLGpbyYeH-YvO6IYYdMvk/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwDAsX5BOD6LayDKMhH1ZlWbnwQBGfurWwhDkQPRG-KWJTnJiT-zmfmfuarPtTI7CD3GQ/exec';
 
     const questions = [
       'I feel overwhelmed by my thoughts or responsibilities',
@@ -560,11 +560,12 @@
 
       const params = new URLSearchParams({
         form_type: 'assessment',
-        name:  userData.name,
-        email: userData.email,
-        phone: userData.phone,
-        score: total,
-        band:  band.label
+        name:      userData.name,
+        email:     userData.email,
+        phone:     userData.phone,
+        score:     total,
+        band:      band.label,
+        band_desc: band.helps
       });
 
       fetch(SCRIPT_URL, { method: 'POST', body: params, mode: 'no-cors' })
