@@ -221,6 +221,24 @@
     .panel-corporate .btn-panel { background: #fff; color: var(--teal-dark); border-color: #fff; font-weight: 600; }
     .panel-corporate .btn-panel:hover { background: var(--teal-light); color: #fff; border-color: var(--teal-light); transform: translateY(-2px); }
 
+    /* ─── Program Cards ──────────────────────────────── */
+    .program-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .program-card { background: var(--card-bg); border-radius: var(--radius); padding: 2rem 1.75rem; border: 2px solid var(--border); transition: transform .28s ease, box-shadow .28s ease; position: relative; }
+    .program-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+    .program-card.popular { border-color: var(--teal); }
+    .popular-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--teal); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.9rem; border-radius: 20px; white-space: nowrap; }
+    .program-duration { display: inline-block; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--teal-dark); line-height: 1; margin-bottom: 0.35rem; }
+    .program-card.popular .program-duration { color: var(--teal); }
+    .program-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; display: block; }
+    .program-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .program-card .program-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
+    .program-features { list-style: none; padding: 0; margin-bottom: 1.75rem; }
+    .program-features li { font-size: 0.85rem; color: var(--text); padding: 0.45rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5; }
+    .program-features li:last-child { border-bottom: none; }
+    .program-features li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .program-cta { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--teal); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: gap .2s; }
+    .program-cta:hover { gap: 0.65rem; }
+
     /* ─── Responsive ──────────────────────────────────── */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
@@ -236,6 +254,7 @@
       .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
       .cards-grid-2 { grid-template-columns: 1fr; }
       .cards-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .program-cards { grid-template-columns: 1fr; }
       .learn-grid { grid-template-columns: 1fr; }
       .steps { grid-template-columns: repeat(2, 1fr); }
       .steps::before { display: none; }
@@ -379,6 +398,67 @@
 
   </div>
 
+  <!-- ─── Curated Programs ────────────────────────────────── -->
+  <section class="section-wrap bg-blue">
+    <div class="container">
+      <div class="section-header">
+        <h2>Curated Programs</h2>
+        <p>Choose a duration that fits your schedule. Every program includes real case exposure, mentorship, and a certificate on completion.</p>
+      </div>
+      <div class="program-cards">
+
+        <div class="program-card">
+          <span class="program-duration">2 Weeks</span>
+          <span class="program-label">Foundation Intensive</span>
+          <h3>Your First Step In</h3>
+          <p class="program-desc">A focused introduction for those who want real exposure before committing to a longer track.</p>
+          <ul class="program-features">
+            <li>Core psychology concepts &amp; frameworks</li>
+            <li>2 guided real-world case discussions</li>
+            <li>1-on-1 introductory mentor session</li>
+            <li>Access to learning group &amp; resources</li>
+            <li>Certificate of participation</li>
+          </ul>
+          <a href="#apply" class="program-cta">Apply for 2 Weeks &rarr;</a>
+        </div>
+
+        <div class="program-card popular">
+          <span class="popular-badge">Most Popular</span>
+          <span class="program-duration">1 Month</span>
+          <span class="program-label">Core Programme</span>
+          <h3>Build Real Foundations</h3>
+          <p class="program-desc">The most chosen track. Structured sessions, applied learning, and weekly mentorship over four weeks.</p>
+          <ul class="program-features">
+            <li>Full foundation + applied psychology sessions</li>
+            <li>4 real case discussions with analysis</li>
+            <li>Weekly 1-on-1 mentorship &amp; feedback</li>
+            <li>Therapeutic communication practice</li>
+            <li>Ethics &amp; professional boundaries module</li>
+            <li>Certificate of completion</li>
+          </ul>
+          <a href="#apply" class="program-cta">Apply for 1 Month &rarr;</a>
+        </div>
+
+        <div class="program-card">
+          <span class="program-duration">2 Months</span>
+          <span class="program-label">Deep Dive</span>
+          <h3>Comprehensive Training</h3>
+          <p class="program-desc">For those serious about applied psychology — deeper case work, reflective assignments, and richer mentorship.</p>
+          <ul class="program-features">
+            <li>Everything in the 1-month track</li>
+            <li>8+ case discussions + role-play exercises</li>
+            <li>Bi-weekly 1-on-1 mentorship sessions</li>
+            <li>Reflective assignments &amp; written analysis</li>
+            <li>Personal &amp; corporate psychology modules</li>
+            <li>Certificate of completion + LinkedIn recommendation</li>
+          </ul>
+          <a href="#apply" class="program-cta">Apply for 2 Months &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ─── What You Will Learn ───────────────────────────── -->
   <section class="section-wrap bg-cream">
     <div class="container">
@@ -447,6 +527,18 @@
                 <option>Organisational Psychology (Professionals)</option>
               </select>
             </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="duration">Programme Duration</label>
+              <select id="duration">
+                <option value="">Select duration</option>
+                <option>2 Weeks — Foundation Intensive</option>
+                <option>1 Month — Core Programme</option>
+                <option>2 Months — Deep Dive</option>
+              </select>
+            </div>
+            <div></div>
           </div>
           <div class="form-group">
             <label for="motivation">Why do you want to join this programme?</label>
@@ -532,6 +624,7 @@
         email:      document.getElementById('email').value,
         phone:      document.getElementById('phone').value,
         service:    document.getElementById('track').value,
+        duration:   document.getElementById('duration').value,
         message:    document.getElementById('motivation').value
       });
       fetch(INTERNSHIP_SCRIPT_URL, { method: 'POST', body: params, mode: 'no-cors' })
