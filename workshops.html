@@ -202,7 +202,9 @@
     .contact-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 0.75rem; line-height: 1.5; }
     .contact-item .icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
     .footer-bottom { max-width: 1160px; margin: 0 auto; text-align: center; font-size: 0.82rem; color: rgba(255,255,255,.35); }
+    .ppd-card { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     @media (max-width: 900px) {
+      .ppd-card { grid-template-columns: 1fr; gap: 1.5rem; }
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 1.5rem; gap: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
@@ -301,12 +303,14 @@
         <h2>Upcoming <span class="accent">Awareness Workshops</span></h2>
         <p>Open to individuals, students, and anyone who wants to understand mental health better. Certificate included. Limited slots.</p>
       </div>
-      <div class="card" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
+      <div class="card ppd-card">
         <div>
           <div class="card-icon">🌸</div>
           <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Postpartum Depression Awareness Workshop</h3>
           <p style="font-style:italic; color:var(--muted); margin-bottom:1rem;">Understand. Identify. Support.</p>
-          <p style="margin-bottom:1rem;">Motherhood can feel overwhelming, isolating, and confusing. Postpartum Depression is more common than most people realise — yet many women struggle silently. This 1-hour interactive online workshop helps you recognise the signs, understand the difference between baby blues and PPD, and learn how to offer meaningful support.</p>
+          <p style="margin-bottom:0.85rem;">Motherhood is often described as a joyful journey, but for many women, it can also feel overwhelming, emotionally exhausting, isolating, and confusing.</p>
+          <p style="margin-bottom:0.85rem;">Postpartum Depression (PPD) is more common than most people realise, yet many women struggle silently without understanding what they are experiencing.</p>
+          <p style="margin-bottom:1rem;">This workshop is designed to create awareness, build understanding, and help participants learn how to identify and support postpartum mental health concerns with empathy and clarity.</p>
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin:1.25rem 0; font-size:0.88rem;">
             <span style="background:var(--blue-gray); padding:0.35rem 0.9rem; border-radius:20px;">⏱ 1 Hour</span>
             <span style="background:var(--blue-gray); padding:0.35rem 0.9rem; border-radius:20px;">💻 Online</span>
