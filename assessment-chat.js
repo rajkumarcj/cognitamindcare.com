@@ -263,7 +263,7 @@
     }
 
     async function flow() {
-      await botSay('Hi, I’m glad you’re here. This is a free mental wellness check-in — 15 quick questions, about 5 minutes, completely private.');
+      await botSay('Hi, I’m glad you’re here. This is a free mental wellness check-in — 15 quick questions, about 1 minute, completely private.');
       await botSay('Before we start, what’s your name? <em>(optional)</em>');
       state.name = await askText({ placeholder: 'Your name', autocomplete: 'name', skip: true });
       tick();
@@ -349,7 +349,7 @@
       if (chat) return; // already opened, no nudge needed
       badge = el('span', 'cchat-bubble-badge', '1');
       bubble.appendChild(badge);
-      teaser = el('div', 'cchat-teaser', 'Hi 👋 Feeling stretched lately? Take a free 5-minute mental wellness check-in.');
+      teaser = el('div', 'cchat-teaser', 'Hi 👋 Feeling stretched lately? Take a free 1-minute mental wellness check-in.');
       teaser.setAttribute('role', 'button');
       teaser.tabIndex = 0;
       teaser.addEventListener('click', function () { bubble.click(); });
