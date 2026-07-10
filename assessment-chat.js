@@ -79,6 +79,10 @@
 .cchat-helps-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#7A7A7A);margin:.8rem 0 .3rem;}\
 .cchat-helps{font-size:.9rem;font-style:italic;line-height:1.55;}\
 .cchat-bubble{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:var(--teal,#3AABA0);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;z-index:1001;transition:transform .15s;}\
+.cchat-bubble-badge{position:absolute;top:-3px;right:-3px;width:19px;height:19px;background:#E05A4E;color:#fff;border-radius:50%;font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #fff;}\
+.cchat-teaser{position:fixed;right:22px;bottom:92px;max-width:250px;background:#fff;border:none;border-radius:14px 14px 4px 14px;box-shadow:0 6px 24px rgba(0,0,0,.18);padding:.85rem 1rem;font-family:"DM Sans",sans-serif;font-size:.86rem;line-height:1.5;color:var(--text,#3A3A3A);text-align:left;cursor:pointer;z-index:1000;animation:cchat-teaser-in .35s ease-out;}\
+@keyframes cchat-teaser-in{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}\
+.cchat-teaser-close{position:absolute;top:-9px;left:-9px;width:22px;height:22px;border-radius:50%;background:var(--gray-bg,#EDEAE8);color:var(--muted,#7A7A7A);border:none;font-size:.85rem;line-height:1;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.15);}\
 .cchat-bubble:hover{transform:scale(1.06);}\
 .cchat-popup{position:fixed;right:22px;bottom:92px;width:380px;max-width:calc(100vw - 30px);height:70vh;max-height:640px;z-index:1000;display:none;box-shadow:0 12px 40px rgba(0,0,0,.25);border-radius:16px;}\
 .cchat-popup.cchat-open{display:block;}\
@@ -318,9 +322,16 @@
     bubble.setAttribute('aria-label', 'Open free mental wellness check-in');
     bubble.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.9 2 11.7c0 2.7 1.4 5.1 3.6 6.7-.1 1-.6 2.6-1.5 3.6 1.9-.2 3.8-1 5-1.8.9.2 1.9.3 2.9.3 5.5 0 10-3.9 10-8.8S17.5 3 12 3z"/></svg>';
     var chat = null;
+    var teaser = null;
+    var badge = null;
+    function clearNudge() {
+      if (teaser) { teaser.remove(); teaser = null; }
+      if (badge) { badge.remove(); badge = null; }
+    }
     bubble.addEventListener('click', function () {
       var open = popup.classList.toggle('cchat-open');
       if (open) {
+        clearNudge();
         if (!chat) {
           chat = createChat(popup, {
             onClose: function () {
@@ -334,6 +345,28 @@
         if (f) f.focus();
       }
     });
+    setTimeout(function () {
+      if (chat) return; // already opened, no nudge needed
+      badge = el('span', 'cchat-bubble-badge', '1');
+      bubble.appendChild(badge);
+      teaser = el('div', 'cchat-teaser', 'Hi 👋 Feeling stretched lately? Take a free 5-minute mental wellness check-in.');
+      teaser.setAttribute('role', 'button');
+      teaser.tabIndex = 0;
+      teaser.addEventListener('click', function () { bubble.click(); });
+      teaser.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); bubble.click(); }
+      });
+      var tx = el('button', 'cchat-teaser-close', '&times;');
+      tx.type = 'button';
+      tx.setAttribute('aria-label', 'Dismiss');
+      tx.addEventListener('click', function (e) {
+        e.stopPropagation();
+        teaser.remove();
+        teaser = null;
+      });
+      teaser.appendChild(tx);
+      document.body.appendChild(teaser);
+    }, 8000);
     document.body.appendChild(popup);
     document.body.appendChild(bubble);
   }
