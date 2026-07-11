@@ -69,7 +69,7 @@
         "name": "How many sessions will I need?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Coaching packages typically run 8–12 sessions over 3–6 months. Therapy varies with your goals — many clients feel meaningful change within 6–10 sessions."
+          "text": "Coaching packages typically run 8–12 sessions over 3–6 months. Therapy varies with your goals. Many clients feel meaningful change within 6–10 sessions."
         }
       },
       {
@@ -77,7 +77,7 @@
         "name": "Do you offer virtual sessions?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. All individual coaching and most workshops are available virtually via Zoom, making it accessible regardless of your location."
+          "text": "Yes. All individual coaching and most workshops are available virtually via Zoom, making sessions accessible regardless of your location."
         }
       },
       {
@@ -101,7 +101,7 @@
         "name": "Do you run workshops for organisations?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — half-day and full-day workshops on resilience, communication, and performance under pressure, delivered on-site or virtually across India."
+          "text": "Yes. Half-day and full-day workshops on resilience, communication, and performance under pressure, delivered on-site or virtually across India."
         }
       },
       {
@@ -382,8 +382,12 @@
       grid-template-columns: 1fr 1fr;
     }
     .audience-panel {
-      padding: 5rem 4rem;
+      padding: 3.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
+    .audience-panel .btn-panel { margin-top: auto; }
     .audience-panel.panel-individual {
       background: var(--cream);
     }
@@ -411,8 +415,16 @@
     .panel-corporate h2 { color: #fff; }
     .panel-questions {
       list-style: none;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.75rem;
     }
+    .panel-outcome {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+      max-width: 480px;
+    }
+    .panel-individual .panel-outcome { color: var(--muted); }
+    .panel-corporate .panel-outcome { color: rgba(255,255,255,.85); }
     .panel-questions li {
       display: flex;
       align-items: flex-start;
@@ -948,7 +960,7 @@
         <div class="card card-featured">
           <div class="card-icon">&#9825;</div>
           <h3>Therapy &amp;<br>Counselling</h3>
-          <p>Individual, couples, and family therapy, plus career counselling. Confidential, evidence-based support — online or in person.</p>
+          <p>Individual, couples, and family therapy, plus career counselling. Confidential, evidence-based support, online or in person.</p>
           <a href="therapy.html" class="card-link">Learn more &rarr;</a>
         </div>
 
@@ -985,7 +997,7 @@
       <p class="panel-eyebrow" style="color:var(--teal); font-size:1rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:1rem;">Meet Your Psychologist</p>
       <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.5vw,2.2rem); color:var(--teal-dark); margin-bottom:1rem;">Veroanica</h2>
       <p style="color:var(--muted); line-height:1.7; margin-bottom:1.75rem;">
-        A psychologist and life coach with 10+ years of practice, Veroanica works with individuals, couples, families, and teams across India — combining evidence-based therapy with practical coaching so change lasts beyond the session.
+        A psychologist and life coach with 10+ years of practice, Veroanica works with individuals, couples, families, and teams across India, combining evidence-based therapy with practical coaching so change lasts beyond the session.
       </p>
       <a href="about.html" class="card-link">More about Veroanica &rarr;</a>
     </div>
@@ -999,12 +1011,11 @@
       <p class="panel-eyebrow">For Individuals</p>
       <h2>Does any of this sound like you?</h2>
       <ul class="panel-questions">
-      <li>Do you feel anxious about your future, but can't pinpoint why?</li>
-      <li>Do you feel stuck, like you're capable of more but can't move forward?</li>
-      <li>Are you worried about your career direction, growth, or meaning?</li>
-      <li>Do you want to build stronger relationships, professionally and personally?</li>
-      <li>Are stress, overthinking, or self-doubt quietly holding you back?</li>
+      <li>Anxious about the future, but can't pinpoint why?</li>
+      <li>Capable of more, yet stuck in the same place?</li>
+      <li>Stress, overthinking, or self-doubt quietly running the show?</li>
       </ul>
+      <p class="panel-outcome">Therapy and coaching help you name what's holding you back and build a practical way past it. Most clients feel a shift within the first few sessions.</p>
       <a href="contact.html" class="btn btn-panel">I'm Ready to Start &rarr;</a>
     </div>
 
@@ -1013,12 +1024,11 @@
       <p class="panel-eyebrow">For Couples &amp; Families</p>
       <h2>Is home starting to feel heavy?</h2>
       <ul class="panel-questions">
-      <li>Are the same arguments repeating without ever getting resolved?</li>
-      <li>Do you feel unheard or distant from your partner?</li>
-      <li>Is tension between parents and children wearing everyone down?</li>
-      <li>Has trust been shaken, and you're unsure how to rebuild it?</li>
-      <li>Do you want to communicate without it turning into a fight?</li>
+      <li>Same arguments repeating, never resolving?</li>
+      <li>Feeling unheard, distant, or unsure how to rebuild trust?</li>
+      <li>Conversations turning into fights nobody wins?</li>
       </ul>
+      <p class="panel-outcome">In sessions together, you'll learn to hear each other again, and disagree without damage.</p>
       <a href="contact.html" class="btn btn-panel">Let's Talk &rarr;</a>
     </div>
 
@@ -1088,11 +1098,11 @@
       <div class="cards-grid-2">
         <div class="card">
           <h3>How many sessions will I need?</h3>
-          <p>Coaching packages typically run 8–12 sessions over 3–6 months. Therapy varies with your goals — many clients feel meaningful change within 6–10 sessions.</p>
+          <p>Coaching packages typically run 8–12 sessions over 3–6 months. Therapy varies with your goals. Many clients feel meaningful change within 6–10 sessions.</p>
         </div>
         <div class="card">
           <h3>Do you offer virtual sessions?</h3>
-          <p>Yes. All individual coaching and most workshops are available virtually via Zoom, making it accessible regardless of your location.</p>
+          <p>Yes. All individual coaching and most workshops are available virtually via Zoom, making sessions accessible regardless of your location.</p>
         </div>
         <div class="card">
           <h3>Are sessions confidential?</h3>
@@ -1104,7 +1114,7 @@
         </div>
         <div class="card">
           <h3>Do you run workshops for organisations?</h3>
-          <p>Yes — half-day and full-day workshops on resilience, communication, and performance under pressure, delivered on-site or virtually across India.</p>
+          <p>Yes. Half-day and full-day workshops on resilience, communication, and performance under pressure, delivered on-site or virtually across India.</p>
         </div>
         <div class="card">
           <h3>I'm not sure what's right for me. How do I know?</h3>
