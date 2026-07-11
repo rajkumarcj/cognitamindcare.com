@@ -222,7 +222,17 @@
     .panel-corporate .btn-panel:hover { background: var(--teal-light); color: #fff; border-color: var(--teal-light); transform: translateY(-2px); }
 
     /* ─── Responsive ──────────────────────────────────── */
+    /* ─── Upcoming Workshops ──────────────────────────── */
+    .ppd-card { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .bg-teal-wash { background: rgba(58,171,160,0.06); }
+    .check-list { list-style: none; margin: 0 0 1.25rem 0; }
+    .check-list li { position: relative; padding-left: 1.6rem; line-height: 1.9; color: var(--text); }
+    .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--teal); font-weight: 700; font-size: 0.95rem; }
+    .audience-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+    .audience-tag { background: rgba(58,171,160,0.12); color: var(--teal-dark); font-size: 0.82rem; font-weight: 500; padding: 0.3rem 0.85rem; border-radius: 20px; border: 1px solid rgba(58,171,160,0.25); }
+
     @media (max-width: 900px) {
+      .ppd-card { grid-template-columns: 1fr; gap: 1.5rem; }
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 1.5rem; gap: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
@@ -262,8 +272,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="services.html">Therapy</a></li>
       <li><a href="internships.html" class="active">Internships</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -415,6 +424,58 @@
   </section>
 
   <!-- ─── Apply Form ─────────────────────────────────────── -->
+  <!-- ─── Upcoming Awareness Workshops ─────────────────── -->
+  <section class="section-wrap bg-teal-wash">
+    <div class="container">
+      <div class="section-header">
+        <h2>Upcoming <span class="accent">Workshops</span></h2>
+      </div>
+      <div class="card ppd-card">
+        <div>
+          <div class="card-icon">🧠</div>
+          <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">How to Build a Career in Psychology</h3>
+          <p style="font-style:italic; color:var(--muted); margin-bottom:1rem;">Explore career paths, specializations, and real-world opportunities in psychology.</p>
+          <p style="margin-bottom:0.85rem;">Do you feel drawn towards psychology but still wonder — <em>"What can I actually do in this field?"</em> or <em>"Is psychology only about therapy and counselling?"</em> or <em>"Will this field suit my personality, interests, and goals?"</em></p>
+          <p style="margin-bottom:0.85rem;">Or maybe you're already studying psychology but feel confused about career paths, specializations, higher studies, and real-world opportunities.</p>
+          <p style="margin-bottom:1rem;">This workshop is designed to help you gain clarity on what building a career in psychology actually looks like — beyond textbooks and assumptions.</p>
+          <p style="font-weight:600; margin-bottom:0.75rem; color:var(--text);">You'll explore:</p>
+          <ul class="check-list">
+            <li>Different career options in psychology</li>
+            <li>Real-world applications of psychology</li>
+            <li>How psychology connects with leadership, communication &amp; business</li>
+            <li>Skills needed to grow in this field</li>
+            <li>Higher studies &amp; pathways</li>
+            <li>How to identify which path may suit you best</li>
+            <li>Is psychology the right fit for you?</li>
+          </ul>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin:1.25rem 0; font-size:0.88rem;">
+            <span style="background:var(--blue-gray); padding:0.35rem 0.9rem; border-radius:20px;">📅 1-Day Workshop</span>
+            <span style="background:var(--blue-gray); padding:0.35rem 0.9rem; border-radius:20px;">💻 Online Session</span>
+            <span style="background:var(--blue-gray); padding:0.35rem 0.9rem; border-radius:20px;">🎓 E-Certificate Included</span>
+            <span style="background:var(--blue-gray); padding:0.35rem 0.9rem; border-radius:20px;">💬 Interactive Q&amp;A</span>
+          </div>
+          <p style="color:var(--teal); font-weight:600; margin-bottom:1.25rem;">Limited slots available.</p>
+          <a href="contact.html" class="btn btn-primary" style="display:inline-block;">Register Now &rarr;</a>
+        </div>
+        <div>
+          <p style="font-weight:600; margin-bottom:0.65rem; color:var(--text);">Who can attend:</p>
+          <div class="audience-tags">
+            <span class="audience-tag">🧠 Psychology students</span>
+            <span class="audience-tag">🌿 Curious about the field</span>
+            <span class="audience-tag">🚀 Career growth seekers</span>
+            <span class="audience-tag">🎓 Final year students</span>
+            <span class="audience-tag">💼 Career switchers</span>
+            <span class="audience-tag">📚 Graduates &amp; postgrads</span>
+            <span class="audience-tag">🌟 Aspiring counsellors</span>
+          </div>
+          <div style="margin-top:1.5rem;">
+            <img src="workshop-psychology-career.jpg" alt="How to Build a Career in Psychology workshop flyer" style="width:100%; display:block; border-radius:var(--radius); box-shadow: 0 12px 40px rgba(42,122,118,0.18), 0 2px 8px rgba(0,0,0,0.08);" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section-wrap bg-cream" id="apply" style="padding-top: 2rem;">
     <div class="container">
       <div class="section-header">
@@ -499,8 +560,7 @@
         <h4>Quick Links</h4>
         <ul>
       <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="services.html">Therapy</a></li>
       <li><a href="internships.html">Internships</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
