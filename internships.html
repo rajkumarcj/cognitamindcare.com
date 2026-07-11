@@ -211,33 +211,6 @@
     .contact-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 0.75rem; }
     .footer-bottom { max-width: 1160px; margin: 0 auto; text-align: center; font-size: 0.82rem; color: rgba(255,255,255,.35); }
 
-    /* ─── Who Is This For — Two Panel ───────────────── */
-    .audience-split { display: grid; grid-template-columns: 1fr; }
-    .audience-panel { padding: 5rem 4rem; text-align: center; }
-    .audience-panel .panel-questions { display: block; width: 100%; max-width: 620px; margin-left: auto; margin-right: auto; text-align: left; }
-    .audience-panel.panel-individual { background: var(--cream); }
-    .audience-panel.panel-corporate { background: var(--teal-dark); color: #fff; }
-    .audience-panel .panel-eyebrow { font-size: 1.1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
-    .panel-individual .panel-eyebrow { color: var(--rose); }
-    .panel-corporate .panel-eyebrow { color: var(--teal-light); }
-    .audience-panel h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.75rem; }
-    .panel-individual h2 { color: var(--text); }
-    .panel-corporate h2 { color: #fff; }
-    .panel-questions { list-style: none; margin-bottom: 2.5rem; }
-    .panel-questions li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.97rem; line-height: 1.55; margin-bottom: 0.85rem; font-weight: 500; background: var(--card-bg); border-radius: 10px; padding: 1rem 1.25rem; box-shadow: 0 1px 4px rgba(0,0,0,0.05); transition: transform .25s ease, box-shadow .25s ease; }
-    .panel-questions li:hover { transform: translateX(8px); box-shadow: 0 10px 28px rgba(58,171,160,0.2); }
-    @media (prefers-reduced-motion: reduce) { .panel-questions li, .panel-questions li::before { transition: none; } .panel-questions li:hover { transform: none; } }
-    .panel-individual .panel-questions li { color: var(--text); }
-    .panel-corporate .panel-questions li { color: rgba(255,255,255,.9); }
-    .panel-questions li::before { content: '→'; flex-shrink: 0; font-weight: 700; margin-top: 1px; transition: transform .25s ease; }
-    .panel-questions li:hover::before { transform: translateX(4px); }
-    .panel-individual .panel-questions li::before { color: var(--teal); }
-    .panel-corporate .panel-questions li::before { color: var(--teal-light); }
-    .panel-individual .btn-panel { background: var(--teal); color: #fff; border-color: var(--teal); }
-    .panel-individual .btn-panel:hover { background: var(--teal-light); border-color: var(--teal-light); transform: translateY(-2px); }
-    .panel-corporate .btn-panel { background: #fff; color: var(--teal-dark); border-color: #fff; font-weight: 600; }
-    .panel-corporate .btn-panel:hover { background: var(--teal-light); color: #fff; border-color: var(--teal-light); transform: translateY(-2px); }
-
     /* ─── Responsive ──────────────────────────────────── */
     /* ─── Upcoming Workshops ──────────────────────────── */
     .ppd-card { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
@@ -253,8 +226,6 @@
       .nav-hamburger { display: flex; }
       .page-hero { padding: 7rem 1.5rem 3rem; }
       .page-hero .hero-subtitle { white-space: normal !important; max-width: 100% !important; }
-      .audience-split { grid-template-columns: 1fr; }
-      .audience-panel { padding: 3rem 1.5rem; }
       .section-wrap { padding: 4rem 1.5rem; }
       .stats-strip { padding: 2rem 1.5rem; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -365,24 +336,6 @@
   </section>
 
   <!-- ─── Who Is This For — Two Panel ─────────────────── -->
-  <div class="audience-split">
-
-    <!-- Students -->
-    <div class="audience-panel panel-individual">
-      <p class="panel-eyebrow">For Students &amp; Beginners</p>
-      <h2>Build Your Foundations</h2>
-      <ul class="panel-questions">
-      <li>No prior experience needed. We start from the basics</li>
-      <li>Real case exposure beyond the classroom and textbooks</li>
-      <li>Develop therapeutic communication and active listening skills</li>
-      <li>One-on-one mentorship from an experienced practitioner</li>
-      <li>Earn a certificate in Counselling Psychology on completion</li>
-      </ul>
-      <a href="#apply" class="btn btn-panel">Apply as a Student &rarr;</a>
-    </div>
-
-  </div>
-
   <!-- ─── What You Will Learn ───────────────────────────── -->
   <section class="section-wrap bg-cream">
     <div class="container">
@@ -472,6 +425,38 @@
     </div>
   </section>
 
+  <!-- ─── Student FAQ ───────────────────────────────────── -->
+  <section class="section-wrap bg-gray">
+    <div class="container">
+      <div class="section-header">
+        <p style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.75rem;">For Students &amp; Beginners</p>
+        <h2>Everything Your Degree Didn't Teach You</h2>
+      </div>
+      <div class="cards-grid-2" style="grid-template-columns: 1fr; max-width: 720px; margin: 0 auto;">
+        <div class="card">
+          <h3>"I have no experience."</h3>
+          <p>None needed. We start from the basics, no prerequisites and no jargon assumed.</p>
+        </div>
+        <div class="card">
+          <h3>"I've only read theory."</h3>
+          <p>That's exactly who this is for. Here you work real cases, not textbook examples.</p>
+        </div>
+        <div class="card">
+          <h3>"I freeze in conversations."</h3>
+          <p>We train listening and therapeutic communication step by step, until it feels natural.</p>
+        </div>
+        <div class="card">
+          <h3>"I have no guidance."</h3>
+          <p>One-on-one mentorship from an experienced practitioner, every week.</p>
+        </div>
+        <div class="card">
+          <h3>"I need proof for my CV."</h3>
+          <p>You finish with a certificate in Counselling Psychology, and real case stories to back it up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section-wrap bg-cream" id="apply" style="padding-top: 2rem;">
     <div class="container">
       <div class="section-header">
@@ -506,41 +491,6 @@
             ⚠️ Something went wrong. Please try again or email us directly.
           </div>
         </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Student FAQ ───────────────────────────────────── -->
-  <section class="section-wrap bg-gray">
-    <div class="container">
-      <div class="section-header">
-        <p style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.75rem;">For Students &amp; Beginners</p>
-        <h2>Everything Your Degree Didn't Teach You</h2>
-      </div>
-      <div class="cards-grid-2">
-        <div class="card">
-          <h3>"I have no experience."</h3>
-          <p>None needed. We start from the basics, no prerequisites and no jargon assumed.</p>
-        </div>
-        <div class="card">
-          <h3>"I've only read theory."</h3>
-          <p>That's exactly who this is for. Here you work real cases, not textbook examples.</p>
-        </div>
-        <div class="card">
-          <h3>"I freeze in conversations."</h3>
-          <p>We train listening and therapeutic communication step by step, until it feels natural.</p>
-        </div>
-        <div class="card">
-          <h3>"I have no guidance."</h3>
-          <p>One-on-one mentorship from an experienced practitioner, every week.</p>
-        </div>
-        <div class="card">
-          <h3>"I need proof for my CV."</h3>
-          <p>You finish with a certificate in Counselling Psychology, and real case stories to back it up.</p>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="#apply" class="btn btn-primary">Apply as a Student &rarr;</a>
       </div>
     </div>
   </section>
@@ -632,7 +582,7 @@
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => { navbar.style.boxShadow = window.scrollY > 10 ? '0 2px 16px rgba(0,0,0,0.08)' : '0 1px 0 rgba(0,0,0,0.06)'; });
-    document.querySelectorAll('.cards-grid-2, .cards-grid-4, .learn-grid, .steps, .panel-questions').forEach(grid => {
+    document.querySelectorAll('.cards-grid-2, .cards-grid-4, .learn-grid, .steps').forEach(grid => {
       const items = Array.from(grid.children);
       items.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(24px)'; el.style.transition='opacity .5s ease, transform .5s ease'; });
       const obs = new IntersectionObserver((entries) => {
