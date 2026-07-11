@@ -32,9 +32,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Cognita Mindcare",
-    "url": "https://cognitamindcare.com",
-    "logo": "https://cognitamindcare.com/logo.png",
+    "name": "Veroanica",
+    "url": "https://cognitamindcare.com/about.html",
+    "image": "https://cognitamindcare.com/Photo.jpeg",
     "description": "Life Coach & Corporate Psychologist helping individuals and organisations achieve their full potential.",
     "sameAs": ["https://www.linkedin.com/in/cognita-mindcare/", "https://www.instagram.com/cognitamindcare/"],
     "jobTitle": "Life Coach & Corporate Psychologist",
@@ -66,10 +66,10 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How long is a typical coaching engagement?",
+        "name": "How many sessions will I need?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most individual coaching packages run 8–12 sessions over 3–6 months. We also offer single sessions and intensive 1-day formats."
+          "text": "Coaching packages typically run 8–12 sessions over 3–6 months. Therapy varies with your goals — many clients feel meaningful change within 6–10 sessions."
         }
       },
       {
@@ -82,10 +82,10 @@
       },
       {
         "@type": "Question",
-        "name": "Is coaching confidential?",
+        "name": "Are sessions confidential?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. All sessions are strictly confidential. The only exceptions are standard duty-of-care situations, which we discuss openly at the outset."
+          "text": "Absolutely. All therapy and coaching sessions are strictly confidential. The only exceptions are standard duty-of-care situations, which we discuss openly at the outset."
         }
       },
       {
@@ -98,7 +98,15 @@
       },
       {
         "@type": "Question",
-        "name": "I'm not sure coaching is right for me. How do I know?",
+        "name": "Do you run workshops for organisations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — half-day and full-day workshops on resilience, communication, and performance under pressure, delivered on-site or virtually across India."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I'm not sure what's right for me. How do I know?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Your first session is a free 30-minute conversation with no commitment, no pressure. Most people know within 10 minutes whether it feels right."
@@ -481,6 +489,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
+    .testimonials .cards-grid-2 { grid-template-columns: repeat(3, 1fr); }
     .faq .cards-grid-2 {
       grid-template-columns: 1fr;
       gap: 0.5rem;
@@ -617,6 +626,8 @@
       border-radius: var(--radius);
       padding: 2rem 1.75rem;
       transition: transform .28s ease, box-shadow .28s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
@@ -650,6 +661,8 @@
     .card-link {
       display: inline-flex;
       align-items: center;
+      margin-top: auto;
+      align-self: flex-start;
       gap: 0.35rem;
       color: var(--teal);
       text-decoration: none;
@@ -834,7 +847,7 @@
       .audience-split { grid-template-columns: 1fr; }
       .audience-panel { padding: 3rem 1.5rem; }
       .final-cta { padding: 4rem 1.5rem; }
-      .cards-grid-2 { grid-template-columns: 1fr; }
+      .cards-grid-2, .testimonials .cards-grid-2 { grid-template-columns: 1fr; }
 
       .section-wrap { padding: 4rem 1.5rem; }
 
@@ -884,7 +897,7 @@
     <div class="hero-inner">
 
       <div class="hero-content">
-        <p class="hero-eyebrow">Life Coach &amp; Corporate Psychologist</p>
+        <p class="hero-eyebrow">Psychologist &amp; Life Coach</p>
         <h1>Your Next Chapter Starts With<br><span class="accent">One Conversation.</span></h1>
         <p class="hero-subdesc">
           Whether you're working through anxiety, a difficult relationship, or a career crossroads,
@@ -915,7 +928,7 @@
       </div>
       <div class="stat-item">
         <div class="stat-number">30+</div>
-        <div class="stat-label">Companies Transformed</div>
+        <div class="stat-label">Organisations Partnered</div>
       </div>
       <div class="stat-item">
         <div class="stat-number">4.9★</div>
@@ -939,11 +952,18 @@
           <a href="therapy.html" class="card-link">Learn more &rarr;</a>
         </div>
 
+        <div class="card">
+          <div class="card-icon">&#10022;</div>
+          <h3>Life<br>Coaching</h3>
+          <p>One-on-one coaching for goal clarity, confidence, and career direction. Structured, forward-focused sessions that turn feeling stuck into a plan.</p>
+          <a href="contact.html" class="card-link">Learn more &rarr;</a>
+        </div>
+
         <div class="card" id="workshops">
           <div class="card-icon">&#128101;</div>
           <h3>Workshops &amp;<br>Training</h3>
           <p>Equip your teams with practical tools for resilience, conflict, and performance under pressure. Available as half-day or full-day on-site sessions.</p>
-          <a href="contact.html" class="card-link">Learn more &rarr;</a>
+          <a href="workshops.html" class="card-link">Learn more &rarr;</a>
         </div>
 
         <div class="card">
@@ -956,6 +976,18 @@
       </div>
 
 
+    </div>
+  </section>
+
+  <!-- ─── Meet Veroanica ─────────────────────────────── -->
+  <section class="section-wrap" style="padding-top:4rem; padding-bottom:4rem;">
+    <div class="container" style="max-width:680px; text-align:center;">
+      <p class="panel-eyebrow" style="color:var(--teal); font-size:1rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:1rem;">Meet Your Psychologist</p>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.5vw,2.2rem); color:var(--teal-dark); margin-bottom:1rem;">Veroanica</h2>
+      <p style="color:var(--muted); line-height:1.7; margin-bottom:1.75rem;">
+        A psychologist and life coach with 10+ years of practice, Veroanica works with individuals, couples, families, and teams across India — combining evidence-based therapy with practical coaching so change lasts beyond the session.
+      </p>
+      <a href="about.html" class="card-link">More about Veroanica &rarr;</a>
     </div>
   </section>
 
@@ -996,20 +1028,21 @@
   <section class="section-wrap testimonials" id="blog">
     <div class="container">
       <div class="section-header">
-        <h2>Real Results, Real People</h2>
+        <h2>What Our Clients &amp; Interns Say</h2>
+        <p>Real feedback from therapy clients and internship students.</p>
       </div>
-      <div class="cards-grid">
+      <div class="cards-grid-2" style="max-width: 1200px; margin: 0 auto;">
 
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <blockquote>
-            "The internship programme at Cognita Mindcare gave me more real-world insight in 3 months than I gained in years of study. Veroanica's mentorship is exceptional."
+            "I was hesitant about starting therapy, but the sessions felt safe and unhurried from day one. Over a few months I found it easier to manage my anxiety and speak up for myself. Grateful for the support."
           </blockquote>
           <div class="author-row">
-            <div class="author-avatar">AR</div>
+            <div class="author-avatar">T</div>
             <div>
-              <span class="author-name">Ananya R.</span>
-              <span class="author-role">Psychology Graduate</span>
+              <span class="author-name">Therapy Client</span>
+              <span class="author-role">Individual Therapy</span>
             </div>
           </div>
         </div>
@@ -1017,13 +1050,13 @@
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <blockquote>
-            "Veroanica helped our leadership team build emotional resilience during a period of rapid change. The results were immediate and measurable."
+            "I would just like to say that I really enjoyed your sessions. They kept me hooked and interested in learning, and although it was for 20 days, your knowledge really impressed me. Any questions I asked, you answered very clearly. Thank you for all that you have taught me."
           </blockquote>
           <div class="author-row">
-            <div class="author-avatar">RS</div>
+            <div class="author-avatar">P</div>
             <div>
-              <span class="author-name">Rahul S.</span>
-              <span class="author-role">CEO, EdTech Startup</span>
+              <span class="author-name">Pratikhya</span>
+              <span class="author-role">Psychology Intern</span>
             </div>
           </div>
         </div>
@@ -1031,27 +1064,13 @@
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <blockquote>
-            "I came to Veroanica feeling stuck. Within weeks, I had a clear direction and the confidence to act on it. Her approach is deeply human and incredibly effective."
+            "Your classes have always been very useful and impactful. I am really glad that I was selected for this internship. The case studies really helped me understand how to handle clients and which sectors to deal with. Thank you so much ma'am."
           </blockquote>
           <div class="author-row">
-            <div class="author-avatar">MT</div>
+            <div class="author-avatar">S</div>
             <div>
-              <span class="author-name">Meera T.</span>
-              <span class="author-role">Senior Software Engineer</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <blockquote>
-            "We've worked with several consultants, but none brought the depth and empathy that Veroanica did. Our team's well-being scores have never been higher."
-          </blockquote>
-          <div class="author-row">
-            <div class="author-avatar">KN</div>
-            <div>
-              <span class="author-name">Kavitha N.</span>
-              <span class="author-role">Head of People Operations</span>
+              <span class="author-name">Internship Student</span>
+              <span class="author-role">Psychology Intern</span>
             </div>
           </div>
         </div>
@@ -1068,23 +1087,27 @@
       </div>
       <div class="cards-grid-2">
         <div class="card">
-          <h3>How long is a typical coaching engagement?</h3>
-          <p>Most individual coaching packages run 8–12 sessions over 3–6 months. We also offer single sessions and intensive 1-day formats.</p>
+          <h3>How many sessions will I need?</h3>
+          <p>Coaching packages typically run 8–12 sessions over 3–6 months. Therapy varies with your goals — many clients feel meaningful change within 6–10 sessions.</p>
         </div>
         <div class="card">
           <h3>Do you offer virtual sessions?</h3>
           <p>Yes. All individual coaching and most workshops are available virtually via Zoom, making it accessible regardless of your location.</p>
         </div>
         <div class="card">
-          <h3>Is coaching confidential?</h3>
-          <p>Absolutely. All sessions are strictly confidential. The only exceptions are standard duty-of-care situations, which we discuss openly at the outset.</p>
+          <h3>Are sessions confidential?</h3>
+          <p>Absolutely. All therapy and coaching sessions are strictly confidential. The only exceptions are standard duty-of-care situations, which we discuss openly at the outset.</p>
         </div>
         <div class="card">
           <h3>How is coaching different from therapy?</h3>
           <p>Coaching focuses on your present goals and future potential. Therapy addresses past trauma and mental health conditions. Many clients benefit from both.</p>
         </div>
         <div class="card">
-          <h3>I'm not sure coaching is right for me. How do I know?</h3>
+          <h3>Do you run workshops for organisations?</h3>
+          <p>Yes — half-day and full-day workshops on resilience, communication, and performance under pressure, delivered on-site or virtually across India.</p>
+        </div>
+        <div class="card">
+          <h3>I'm not sure what's right for me. How do I know?</h3>
           <p>Your first session is a free 30-minute conversation with no commitment, no pressure. Most people know within 10 minutes whether it feels right.</p>
         </div>
       </div>
