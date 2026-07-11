@@ -180,7 +180,7 @@
     .social-icon:hover { background: var(--teal); color: #fff; }
     .services-cta { background: linear-gradient(135deg, var(--teal-dark) 0%, #1e5e5a 100%); padding: 2.5rem 3rem; text-align: center; color: #fff; }
     .services-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 700; margin-bottom: 0.6rem; color: #fff; }
-    .services-cta p { font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.65; }
+    .services-cta p { font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: 640px; margin: 0 auto 1.5rem; line-height: 1.65; }
     .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
     .btn-light { background: #fff; color: var(--teal-dark); border-color: #fff; font-weight: 600; }
     .btn-light:hover { background: var(--cream); border-color: var(--cream); }
@@ -251,6 +251,7 @@
       .apply-cta .btn-outline { margin-left: 0; margin-top: 0.75rem; }
       .apply-cta { padding: 4rem 1.5rem; }
     }
+    .cta-oneline { white-space: nowrap; font-size: min(2.4vw, 1em); }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KKZ5DDM8S"></script>
@@ -524,7 +525,7 @@
   <section class="services-cta">
     <div style="max-width:640px; margin:0 auto; text-align:center;">
       <h2>Ready to Begin?</h2>
-      <p>Your first session is free, 30 minutes. Just a conversation, nothing more.<br>Let's find out if we're the right fit.</p>
+      <p><span class="cta-oneline">Your first session is free, 30 minutes. Just a conversation, nothing more.</span><br>Let's find out if we're the right fit.</p>
       <div class="cta-actions">
         <a href="contact.html" class="btn btn-light">Book Your Free Session</a>
         <a href="https://wa.me/918496979197?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services." target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>

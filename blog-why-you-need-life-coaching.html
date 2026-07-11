@@ -123,7 +123,7 @@
     .article-body .callout p { margin-bottom: 0; font-style: italic; }
     .article-cta { background: var(--teal-dark); color: #fff; text-align: center; padding: 4rem 3rem; }
     .article-cta h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.75rem; }
-    .article-cta p { opacity: 0.85; margin-bottom: 1.75rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .article-cta p { opacity: 0.85; margin-bottom: 1.75rem; max-width: 640px; margin-left: auto; margin-right: auto; }
     .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
     /* Footer */
@@ -156,6 +156,7 @@
       footer { padding: 3rem 1.5rem 1.5rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     }
+    .cta-oneline { white-space: nowrap; font-size: min(2.4vw, 1em); }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KKZ5DDM8S"></script>
@@ -296,7 +297,7 @@
   <section class="article-cta">
     <div>
       <h2>Ready to Take the First Step?</h2>
-      <p>If you're feeling stuck or unsure, let's talk. Your first session is free, 30 minutes. Just a conversation, nothing more.</p>
+      <p>If you're feeling stuck or unsure, let's talk.<br><span class="cta-oneline">Your first session is free, 30 minutes. Just a conversation, nothing more.</span></p>
       <div class="cta-actions">
         <a href="contact.html" class="btn btn-light">Book Your Free Session</a>
         <a href="https://wa.me/918496979197?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services." target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>
