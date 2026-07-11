@@ -201,7 +201,7 @@
     /* ─── Who Is This For — Two Panel ───────────────── */
     .audience-split { display: grid; grid-template-columns: 1fr; }
     .audience-panel { padding: 5rem 4rem; text-align: center; }
-    .audience-panel .panel-questions { display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: left; }
+    .audience-panel .panel-questions { display: block; width: 100%; max-width: 620px; margin-left: auto; margin-right: auto; text-align: left; }
     .audience-panel.panel-individual { background: var(--cream); }
     .audience-panel.panel-corporate { background: var(--teal-dark); color: #fff; }
     .audience-panel .panel-eyebrow { font-size: 1.1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
@@ -211,10 +211,13 @@
     .panel-individual h2 { color: var(--text); }
     .panel-corporate h2 { color: #fff; }
     .panel-questions { list-style: none; margin-bottom: 2.5rem; }
-    .panel-questions li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.97rem; line-height: 1.55; margin-bottom: 1.1rem; font-weight: 500; }
+    .panel-questions li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.97rem; line-height: 1.55; margin-bottom: 0.85rem; font-weight: 500; background: var(--card-bg); border-radius: 10px; padding: 1rem 1.25rem; box-shadow: 0 1px 4px rgba(0,0,0,0.05); transition: transform .25s ease, box-shadow .25s ease; }
+    .panel-questions li:hover { transform: translateX(8px); box-shadow: 0 10px 28px rgba(58,171,160,0.2); }
+    @media (prefers-reduced-motion: reduce) { .panel-questions li, .panel-questions li::before { transition: none; } .panel-questions li:hover { transform: none; } }
     .panel-individual .panel-questions li { color: var(--text); }
     .panel-corporate .panel-questions li { color: rgba(255,255,255,.9); }
-    .panel-questions li::before { content: '→'; flex-shrink: 0; font-weight: 700; margin-top: 1px; }
+    .panel-questions li::before { content: '→'; flex-shrink: 0; font-weight: 700; margin-top: 1px; transition: transform .25s ease; }
+    .panel-questions li:hover::before { transform: translateX(4px); }
     .panel-individual .panel-questions li::before { color: var(--teal); }
     .panel-corporate .panel-questions li::before { color: var(--teal-light); }
     .panel-individual .btn-panel { background: var(--teal); color: #fff; border-color: var(--teal); }
@@ -394,6 +397,10 @@
         <div class="learn-item">
           <h4>Psychological Application: Personal</h4>
           <p>Apply psychology to everyday life situations including stress, identity, relationships, and growth.</p>
+        </div>
+        <div class="learn-item">
+          <h4>CBT &amp; REBT Foundations</h4>
+          <p>Learn how cognitive behavioural and rational emotive behaviour therapy work in real practice.</p>
         </div>
       </div>
     </div>
@@ -577,7 +584,7 @@
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => { navbar.style.boxShadow = window.scrollY > 10 ? '0 2px 16px rgba(0,0,0,0.08)' : '0 1px 0 rgba(0,0,0,0.06)'; });
-    document.querySelectorAll('.cards-grid-2, .cards-grid-4, .learn-grid, .steps').forEach(grid => {
+    document.querySelectorAll('.cards-grid-2, .cards-grid-4, .learn-grid, .steps, .panel-questions').forEach(grid => {
       const items = Array.from(grid.children);
       items.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(24px)'; el.style.transition='opacity .5s ease, transform .5s ease'; });
       const obs = new IntersectionObserver((entries) => {
