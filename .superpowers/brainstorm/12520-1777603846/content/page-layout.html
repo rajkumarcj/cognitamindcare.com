@@ -1,0 +1,84 @@
+<h2>Page layout — how should it flow?</h2>
+<p class="subtitle">Both use pill buttons. Difference is how score + results appear.</p>
+
+<div class="split">
+
+  <div class="mockup">
+    <div class="mockup-header">A — Scroll + Sticky Score Panel</div>
+    <div class="mockup-body" style="padding:12px;font-size:12px;">
+
+      <div class="mock-nav" style="font-size:11px;margin-bottom:8px;">Cognita Mindcare</div>
+
+      <div style="background:#f0faf9;border:1px solid #3AABA0;border-radius:8px;padding:8px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="color:#3AABA0;font-weight:700;font-size:13px;">Your Score</span>
+        <span style="font-size:20px;font-weight:800;color:#3AABA0;">24<span style="font-size:11px;color:#7a7a7a;">/60</span></span>
+        <span style="background:#C4A8B0;color:white;border-radius:12px;padding:2px 8px;font-size:10px;">Some Strain</span>
+      </div>
+
+      <div style="background:#f8f6f3;border-radius:6px;padding:8px;margin-bottom:6px;">
+        <div style="font-size:11px;font-weight:600;color:#7a7a7a;margin-bottom:4px;">BASIC DETAILS</div>
+        <div style="display:flex;gap:4px;flex-direction:column;">
+          <div class="mock-input" style="font-size:11px;padding:4px 8px;">Name (optional)</div>
+          <div class="mock-input" style="font-size:11px;padding:4px 8px;">Email *</div>
+          <div class="mock-input" style="font-size:11px;padding:4px 8px;">Phone (optional)</div>
+        </div>
+      </div>
+
+      <div style="background:#f8f6f3;border-radius:6px;padding:8px;margin-bottom:6px;">
+        <div style="font-size:11px;font-weight:600;color:#7a7a7a;margin-bottom:6px;">SELF-ASSESSMENT (1 of 15)</div>
+        <div style="font-size:12px;color:#3a3a3a;margin-bottom:6px;">I feel overwhelmed by my thoughts or responsibilities</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;">
+          <span style="padding:4px 8px;border:1.5px solid #3AABA0;border-radius:16px;background:#3AABA0;color:white;font-size:10px;">Often ✓</span>
+          <span style="padding:4px 8px;border:1.5px solid #C4A8B0;border-radius:16px;font-size:10px;">Not at all</span>
+          <span style="padding:4px 8px;border:1.5px solid #C4A8B0;border-radius:16px;font-size:10px;">Rarely</span>
+          <span style="padding:4px 8px;border:1.5px solid #C4A8B0;border-radius:16px;font-size:10px;">Sometimes</span>
+          <span style="padding:4px 8px;border:1.5px solid #C4A8B0;border-radius:16px;font-size:10px;">Almost always</span>
+        </div>
+      </div>
+
+      <div style="text-align:center;color:#7a7a7a;font-size:10px;">↓ 14 more questions scroll below...</div>
+
+      <div style="background:#fff8f6;border:1px solid #C4A8B0;border-radius:6px;padding:8px;margin-top:6px;">
+        <div style="font-size:11px;font-weight:600;color:#C4A8B0;margin-bottom:3px;">This session can help with...</div>
+        <div style="font-size:10px;color:#3a3a3a;">Managing stress, improving focus, navigating relationship patterns</div>
+      </div>
+
+      <button class="mock-button" style="width:100%;margin-top:8px;font-size:11px;background:#3AABA0;color:white;border:none;border-radius:6px;padding:8px;">Submit & Get Insights</button>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">B — Step-by-Step Wizard</div>
+    <div class="mockup-body" style="padding:12px;font-size:12px;">
+
+      <div class="mock-nav" style="font-size:11px;margin-bottom:8px;">Cognita Mindcare</div>
+
+      <div style="display:flex;gap:4px;margin-bottom:10px;justify-content:center;">
+        <div style="width:28px;height:4px;border-radius:2px;background:#3AABA0;"></div>
+        <div style="width:28px;height:4px;border-radius:2px;background:#3AABA0;"></div>
+        <div style="width:28px;height:4px;border-radius:2px;background:#e0e0e0;"></div>
+      </div>
+      <div style="text-align:center;font-size:10px;color:#7a7a7a;margin-bottom:8px;">Step 2 of 3 — Question 7 of 15</div>
+
+      <div style="background:#f8f6f3;border-radius:8px;padding:12px;margin-bottom:8px;">
+        <div style="font-size:13px;font-weight:600;color:#3a3a3a;margin-bottom:10px;line-height:1.4;">I feel overwhelmed by my thoughts or responsibilities</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;">
+          <span style="padding:8px 12px;border:1.5px solid #C4A8B0;border-radius:20px;font-size:11px;cursor:pointer;">Not at all</span>
+          <span style="padding:8px 12px;border:1.5px solid #C4A8B0;border-radius:20px;font-size:11px;cursor:pointer;">Rarely</span>
+          <span style="padding:8px 12px;border:1.5px solid #C4A8B0;border-radius:20px;font-size:11px;cursor:pointer;">Sometimes</span>
+          <span style="padding:8px 12px;border:1.5px solid #3AABA0;border-radius:20px;background:#3AABA0;color:white;font-size:11px;">Often ✓</span>
+          <span style="padding:8px 12px;border:1.5px solid #C4A8B0;border-radius:20px;font-size:11px;cursor:pointer;">Almost always</span>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <button style="padding:6px 12px;border:1px solid #ccc;border-radius:16px;font-size:11px;background:white;cursor:pointer;">← Back</button>
+        <span style="font-size:11px;color:#7a7a7a;">Score so far: <strong style="color:#3AABA0;">24</strong></span>
+        <button style="padding:6px 12px;border:none;border-radius:16px;font-size:11px;background:#3AABA0;color:white;cursor:pointer;">Next →</button>
+      </div>
+
+      <div style="text-align:center;font-size:10px;color:#7a7a7a;">Step 3 = your results + submit</div>
+    </div>
+  </div>
+
+</div>

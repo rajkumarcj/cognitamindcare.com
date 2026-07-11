@@ -1,0 +1,91 @@
+<h2>How should each question look?</h2>
+<p class="subtitle">Pick the style that fits best for a mental wellness self-assessment</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:20px;background:#f8f6f3;">
+      <div style="font-size:14px;color:#3a3a3a;margin-bottom:12px;font-weight:500;">I feel overwhelmed by my thoughts or responsibilities</div>
+      <div style="display:flex;gap:8px;justify-content:center;">
+        <label style="display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;">
+          <input type="radio" name="demo-a" style="accent-color:#3AABA0;width:18px;height:18px;">
+          <span style="font-size:11px;color:#7a7a7a;">0<br>Not at all</span>
+        </label>
+        <label style="display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;">
+          <input type="radio" name="demo-a" style="accent-color:#3AABA0;width:18px;height:18px;">
+          <span style="font-size:11px;color:#7a7a7a;">1<br>Rarely</span>
+        </label>
+        <label style="display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;">
+          <input type="radio" name="demo-a" style="accent-color:#3AABA0;width:18px;height:18px;">
+          <span style="font-size:11px;color:#7a7a7a;">2<br>Sometimes</span>
+        </label>
+        <label style="display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;">
+          <input type="radio" name="demo-a" style="accent-color:#3AABA0;width:18px;height:18px;">
+          <span style="font-size:11px;color:#7a7a7a;">3<br>Often</span>
+        </label>
+        <label style="display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;">
+          <input type="radio" name="demo-a" style="accent-color:#3AABA0;width:18px;height:18px;">
+          <span style="font-size:11px;color:#7a7a7a;">4<br>Almost always</span>
+        </label>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Radio Scale</h3>
+      <p>Classic 0–4 radio buttons with labels. Familiar, accessible, works on all devices.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:20px;background:#f8f6f3;">
+      <div style="font-size:14px;color:#3a3a3a;margin-bottom:12px;font-weight:500;">I feel overwhelmed by my thoughts or responsibilities</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;">
+        <button style="padding:8px 12px;border:2px solid #C4A8B0;border-radius:24px;background:white;font-size:12px;color:#3a3a3a;cursor:pointer;white-space:nowrap;">Not at all</button>
+        <button style="padding:8px 12px;border:2px solid #C4A8B0;border-radius:24px;background:white;font-size:12px;color:#3a3a3a;cursor:pointer;white-space:nowrap;">Rarely</button>
+        <button style="padding:8px 12px;border:2px solid #C4A8B0;border-radius:24px;background:white;font-size:12px;color:#3a3a3a;cursor:pointer;white-space:nowrap;">Sometimes</button>
+        <button style="padding:8px 12px;border:2px solid #3AABA0;border-radius:24px;background:#3AABA0;color:white;font-size:12px;cursor:pointer;white-space:nowrap;">Often ✓</button>
+        <button style="padding:8px 12px;border:2px solid #C4A8B0;border-radius:24px;background:white;font-size:12px;color:#3a3a3a;cursor:pointer;white-space:nowrap;">Almost always</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Pill Buttons</h3>
+      <p>Tappable pill chips with full text labels. Modern, touch-friendly, visually satisfying to select.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:20px;background:#f8f6f3;">
+      <div style="font-size:14px;color:#3a3a3a;margin-bottom:12px;font-weight:500;">I feel overwhelmed by my thoughts or responsibilities</div>
+      <div style="display:flex;gap:4px;justify-content:center;align-items:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#e8f5f4;border:2px solid #3AABA0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#3AABA0;cursor:pointer;">0</div>
+          <span style="font-size:10px;color:#7a7a7a;text-align:center;">Not<br>at all</span>
+        </div>
+        <div style="height:2px;width:16px;background:#e0e0e0;margin-bottom:16px;"></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#f0f0f0;border:2px solid #ddd;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#999;cursor:pointer;">1</div>
+          <span style="font-size:10px;color:#7a7a7a;text-align:center;">Rarely</span>
+        </div>
+        <div style="height:2px;width:16px;background:#e0e0e0;margin-bottom:16px;"></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#f0f0f0;border:2px solid #ddd;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#999;cursor:pointer;">2</div>
+          <span style="font-size:10px;color:#7a7a7a;text-align:center;">Some&shy;times</span>
+        </div>
+        <div style="height:2px;width:16px;background:#e0e0e0;margin-bottom:16px;"></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#f0f0f0;border:2px solid #ddd;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#999;cursor:pointer;">3</div>
+          <span style="font-size:10px;color:#7a7a7a;text-align:center;">Often</span>
+        </div>
+        <div style="height:2px;width:16px;background:#e0e0e0;margin-bottom:16px;"></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#f0f0f0;border:2px solid #ddd;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#999;cursor:pointer;">4</div>
+          <span style="font-size:10px;color:#7a7a7a;text-align:center;">Almost always</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Numbered Circles</h3>
+      <p>Connected dot scale. Visual progress feel, great on mobile, compact for long forms.</p>
+    </div>
+  </div>
+
+</div>
