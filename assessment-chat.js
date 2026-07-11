@@ -87,7 +87,7 @@
 .cchat-popup{position:fixed;right:22px;bottom:92px;width:380px;max-width:calc(100vw - 30px);height:70vh;max-height:640px;z-index:1000;display:none;box-shadow:0 12px 40px rgba(0,0,0,.25);border-radius:16px;}\
 .cchat-popup.cchat-open{display:block;}\
 .cchat-inline{height:72vh;max-height:700px;}\
-@media (max-width:480px){.cchat-popup{left:0;right:0;top:0;bottom:0;width:100%;height:100dvh;max-height:none;border-radius:0;}.cchat-popup .cchat-panel{border-radius:0;}}';
+@media (max-width:480px){.cchat-popup{left:0;right:0;top:0;bottom:0;width:100%;max-width:none;height:100dvh;max-height:none;border-radius:0;}.cchat-popup .cchat-panel{border-radius:0;}.cchat-popup.cchat-open+.cchat-bubble{display:none;}.cchat-input{font-size:16px;}}';
 
   function el(tag, cls, html) {
     var e = document.createElement(tag);
