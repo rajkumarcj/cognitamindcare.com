@@ -156,6 +156,15 @@
     .card ul li:last-child { border-bottom: none; }
     .card ul li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
+    /* ─── Testimonials ────────────────────────────────── */
+    .testimonial-card { background: var(--card-bg); border-radius: var(--radius); padding: 2rem 1.75rem; }
+    .stars { color: var(--teal); font-size: 1.1rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
+    .testimonial-card blockquote { font-style: italic; color: var(--muted); line-height: 1.7; font-size: 0.93rem; margin-bottom: 1.5rem; }
+    .author-row { display: flex; align-items: center; gap: 0.75rem; }
+    .author-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--teal); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 600; }
+    .author-name { font-weight: 600; font-size: 0.88rem; display: block; margin-bottom: 0.2rem; }
+    .author-role { color: var(--muted); font-size: 0.82rem; }
+
     /* ─── Learn Grid ──────────────────────────────────── */
     .learn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     .learn-item { background: var(--card-bg); border-radius: var(--radius); padding: 1.5rem; border-left: 3px solid var(--teal); }
@@ -454,6 +463,44 @@
         <div class="card faq-row">
           <h3>"I need proof for my CV."</h3>
           <p>You finish with a certificate in Counselling Psychology, and real case stories to back it up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Student Reviews ───────────────────────────────── -->
+  <section class="section-wrap bg-cream">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Interns Say</h2>
+        <p>Real feedback from students who completed the internship.</p>
+      </div>
+      <div class="cards-grid-2" style="max-width: 960px; margin: 0 auto;">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "I would just like to say that I really enjoyed your sessions. They kept me hooked and interested in learning, and although it was for 20 days, your knowledge really impressed me. Any questions I asked, you answered very clearly. Thank you for all that you have taught me."
+          </blockquote>
+          <div class="author-row">
+            <div class="author-avatar">P</div>
+            <div>
+              <span class="author-name">Pratikhya</span>
+              <span class="author-role">Psychology Intern</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "Your classes have always been very useful and impactful. I am really glad that I was selected for this internship. The case studies really helped me understand how to handle clients and which sectors to deal with. Thank you so much ma'am."
+          </blockquote>
+          <div class="author-row">
+            <div class="author-avatar">S</div>
+            <div>
+              <span class="author-name">Internship Student</span>
+              <span class="author-role">Psychology Intern</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
