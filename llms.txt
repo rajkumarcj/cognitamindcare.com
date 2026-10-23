@@ -1,0 +1,15 @@
+# Cognita Mindcare
+
+> Affordable online therapy and life coaching across India, based in Bengaluru. Evidence-based, confidential. Founded by Veroanica, psychologist and life coach. First 30-minute session is free.
+
+## Services
+- [Therapy](https://cognitamindcare.com/therapy.html): Counselling for anxiety, stress, relationships and life transitions. Online (Zoom) across India, in person in Bengaluru.
+- [Psychology internship](https://cognitamindcare.com/internships.html): Online internship with real case exposure, CBT/REBT training and certificate.
+
+## About
+- [About](https://cognitamindcare.com/about.html): Who Veroanica is, approach and background.
+- [Contact / book a free session](https://cognitamindcare.com/contact.html): Free 30-minute intro session, Bengaluru or online.
+
+## Articles
+- [Blog](https://cognitamindcare.com/blog.html): Articles on anxiety, stress, relationships and emotional growth.
+- [Why you might need life coaching](https://cognitamindcare.com/blog-why-you-need-life-coaching.html)
