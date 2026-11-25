@@ -219,7 +219,7 @@
       return new Promise(function (res) {
         dock.innerHTML = '';
         var wrap = el('div', 'cchat-actions');
-        var submit = el('button', 'cchat-action cchat-action-primary', 'Submit &amp; book a free session &rarr;');
+        var submit = el('button', 'cchat-action cchat-action-primary', 'Submit &amp; book a ₹99 call &rarr;');
         submit.type = 'button';
         submit.addEventListener('click', function () {
           submit.disabled = true;
